@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dog Adoption — Sign up</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card" role="region" aria-labelledby="card-title">
+      <header class="card__head">
+        <h1 id="card-title">Welcome,</h1>
+        <p class="card__sub">sign up to continue</p>
+      </header>
+
+      <form class="form" action="#" method="post" novalidate>
+        <div class="field">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Email" required />
+        </div>
+
+        <div class="field">
+          <label class="sr-only" for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Password" required />
+        </div>
+
+        <div class="social-row" aria-label="Continue with">
+          <!-- Left button -->
+          <button class="social-btn social-btn--orange" type="button" aria-label="Continue with Apple">
+            <i class="fa fa-paw"></i>
+          </button>
+
+          <!-- Middle button -->
+          <button class="social-btn social-btn--orange2" type="button" aria-label="Continue with Google">
+            <i class="fa fa-paw"></i>
+          </button>
+
+          <!-- Right button -->
+          <button class="social-btn social-btn--green" type="button" aria-label="Continue with Facebook">
+            <i class="fa fa-paw"></i>
+          </button>
+        </div>
+
+        <button class="cta" type="submit">
+          Let’s go <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DogAdopt — Home</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Homepage-only CSS (vw/vh) -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="home">
+  <!-- ===== Header ===== -->
+  <header class="home-header">
+    <div class="home-container home-header__inner">
+      <a class="home-brand" href="#">
+        <span class="home-brand__icon"><i class="fa fa-paw"></i></span>
+        <span class="home-brand__name">DogAdopt</span>
+      </a>
+
+      <nav class="home-nav" aria-label="Primary">
+        <a href="#" class="home-nav__link is-active">Home</a>
+        <a href="#" class="home-nav__link">About</a>
+        <a href="#" class="home-nav__link">Dogs</a>
+        <a href="#" class="home-nav__link">Adopt</a>
+        <a href="#" class="home-nav__link">Contact</a>
+      </nav>
+
+      <div class="home-header__cta">
+        <a class="home-btn home-btn--outline" href="#">Sign in</a>
+        <a class="home-btn" href="#">Sign up</a>
+      </div>
+
+      <button class="home-nav__toggle" aria-label="Open menu">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="home-main">
+    <!-- ===== Hero ===== -->
+    <section class="home-hero">
+      <div class="home-container home-hero__inner">
+        <div class="home-hero__text">
+          <h1 class="home-hero__title">Find Your New Best Friend</h1>
+          <p class="home-hero__subtitle">
+            Browse loving dogs waiting for a forever home. Simple process, friendly support.
+          </p>
+          <div class="home-hero__actions">
+            <a class="home-btn home-btn--lg" href="#">Adopt now</a>
+            <a class="home-btn home-btn--ghost home-btn--lg" href="#">See available dogs</a>
+          </div>
+        </div>
+
+        <div class="home-hero__art" aria-hidden="true">
+          <span class="home-paw-circle home-paw--orange"><i class="fa fa-paw"></i></span>
+          <span class="home-paw-circle home-paw--orange2"><i class="fa fa-paw"></i></span>
+          <span class="home-paw-circle home-paw--green"><i class="fa fa-paw"></i></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Featured Dogs ===== -->
+    <section class="home-section home-section--dogs">
+      <div class="home-container">
+        <div class="home-section__head">
+          <h2 class="home-section__title">Featured Dogs</h2>
+          <a class="home-link" href="#">View all <i class="fa fa-arrow-right"></i></a>
+        </div>
+
+        <div class="home-dogs">
+          <article class="home-card home-dog">
+            <div class="home-dog__media" role="img" aria-label="Dog placeholder"></div>
+            <div class="home-dog__body">
+              <h3 class="home-dog__name">Buddy</h3>
+              <p class="home-text--muted">Mixed • 2 yrs</p>
+              <a class="home-btn home-btn--sm" href="#">Adopt me</a>
+            </div>
+          </article>
+
+          <article class="home-card home-dog">
+            <div class="home-dog__media"></div>
+            <div class="home-dog__body">
+              <h3 class="home-dog__name">Luna</h3>
+              <p class="home-text--muted">Beagle • 1.5 yrs</p>
+              <a class="home-btn home-btn--sm" href="#">Adopt me</a>
+            </div>
+          </article>
+
+          <article class="home-card home-dog">
+            <div class="home-dog__media"></div>
+            <div class="home-dog__body">
+              <h3 class="home-dog__name">Max</h3>
+              <p class="home-text--muted">Shepherd • 3 yrs</p>
+              <a class="home-btn home-btn--sm" href="#">Adopt me</a>
+            </div>
+          </article>
+
+          <article class="home-card home-dog">
+            <div class="home-dog__media"></div>
+            <div class="home-dog__body">
+              <h3 class="home-dog__name">Daisy</h3>
+              <p class="home-text--muted">Terrier • 10 mo</p>
+              <a class="home-btn home-btn--sm" href="#">Adopt me</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== How It Works ===== -->
+    <section class="home-section home-section--how">
+      <div class="home-container">
+        <div class="home-section__head">
+          <h2 class="home-section__title">How it works</h2>
+        </div>
+
+        <div class="home-steps">
+          <div class="home-card home-step">
+            <span class="home-step__icon home-paw--orange"><i class="fa fa-paw"></i></span>
+            <h3 class="home-step__title">Browse</h3>
+            <p class="home-text--muted">Filter by age, size, and personality to find a match.</p>
+          </div>
+
+          <div class="home-card home-step">
+            <span class="home-step__icon home-paw--orange2"><i class="fa fa-paw"></i></span>
+            <h3 class="home-step__title">Apply</h3>
+            <p class="home-text--muted">Complete a quick application so we can get to know you.</p>
+          </div>
+
+          <div class="home-card home-step">
+            <span class="home-step__icon home-paw--green"><i class="fa fa-paw"></i></span>
+            <h3 class="home-step__title">Adopt</h3>
+            <p class="home-text--muted">Meet your new friend and finalize the adoption.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="home-footer">
+    <div class="home-container home-footer__inner">
+      <p class="home-footer__copy">© <span id="home-year"></span> DogAdopt</p>
+      <nav class="home-footer__nav" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="home-footer__social">
+        <span class="home-paw-circle home-paw--orange" aria-label="Instagram"><i class="fa fa-paw"></i></span>
+        <span class="home-paw-circle home-paw--orange2" aria-label="Twitter/X"><i class="fa fa-paw"></i></span>
+        <span class="home-paw-circle home-paw--green" aria-label="Facebook"><i class="fa fa-paw"></i></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('home-year').textContent = new Date().getFullYear();
+    const homeBtn = document.querySelector('.home-nav__toggle');
+    const homeNav = document.querySelector('.home-nav');
+    homeBtn.addEventListener('click', () => homeNav.classList.toggle('is-open'));
+  </script>
+</body>
+</html>
