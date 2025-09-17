@@ -476,6 +476,7 @@ html, body { height: 100%; margin: 0; }
 /* =================================
    HOMEPAGE (smaller shadows)
    ================================= */
+/* ===== CSS Variables (theme) ===== */
 .home{
   --home-bg: #F6F2ED;
   --home-surface: #F9F5EF;
@@ -487,10 +488,6 @@ html, body { height: 100%; margin: 0; }
   --home-orange2: #fb8c34;
   --home-green: #37986e;
   --home-border: #262626;
-
-  background: var(--home-bg);
-  color: var(--home-text);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
 /* Base */
@@ -518,6 +515,7 @@ html, body { height: 100%; margin: 0; }
   transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
   font-size: 1.2vw;
 }
+
 .home-btn:hover{ transform: translate(-0.15vw,-0.15vw); box-shadow: 0.4vw 0.4vw 0 var(--home-border); }
 .home-btn:active{ transform:none; box-shadow: 0.25vw 0.25vw 0 var(--home-border); background: var(--home-accent-press); }
 
@@ -563,6 +561,17 @@ html, body { height: 100%; margin: 0; }
 .home-nav__toggle{ display:none; border:none; background:transparent; font-size: 2vw; }
 
 /* Hero */
+.home-hero__image {
+  /* Adjust the image size */
+ 
+  height: 70vh;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .home-hero{ padding: 7vh 0 6vh; }
 .home-hero__inner{ display:flex; align-items:center; gap: 4vw; }
 .home-hero__text{ width: 52vw; }
@@ -579,6 +588,7 @@ html, body { height: 100%; margin: 0; }
   border-radius: 1.4vw;
   box-shadow: 0.35vw 0.35vw 0 var(--home-border);  /* smaller */
   display:grid; place-items:center;
+  background-color: #FFF3DC;
 }
 .home-paw-circle{
   width: 6.5vw; height: 6.5vw; border-radius:50%;
@@ -606,9 +616,13 @@ html, body { height: 100%; margin: 0; }
 .home-card{ background:#fff; border: 0.26vw solid var(--home-border); border-radius: 1.1vw; box-shadow: 0.35vw 0.35vw 0 var(--home-border); }  /* smaller */
 .home-dog{ width: 21vw; }
 .home-dog__media{
-  width: 100%; height: 14vw;
+  width: 100%; height: 35vh;
   background: linear-gradient(0deg, rgba(0,0,0,.05), rgba(0,0,0,.05)), linear-gradient(135deg, #f7e5d6, #f3f3f3);
   border-bottom: 0.26vw solid var(--home-border);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #FFF8EB;
 }
 .home-dog__body{ padding: 2vh 1.4vw; display:grid; gap: 0.8vh; }
 .home-dog__name{ margin:0; font-size: 1.3vw; }

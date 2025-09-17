@@ -6,10 +6,9 @@
   <title>DogAdopt — Home</title>
 
   <!-- Icons -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Homepage-only CSS (vw/vh) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Homepage-only CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="home">
@@ -56,9 +55,8 @@
         </div>
 
         <div class="home-hero__art" aria-hidden="true">
-          <span class="home-paw-circle home-paw--orange"><i class="fa fa-paw"></i></span>
-          <span class="home-paw-circle home-paw--orange2"><i class="fa fa-paw"></i></span>
-          <span class="home-paw-circle home-paw--green"><i class="fa fa-paw"></i></span>
+          <!-- Replace the three paw circles with one image -->
+          <img src="Photos/DogHouse2.png" alt="Dog House" class="home-hero__image" />
         </div>
       </div>
     </section>
@@ -71,72 +69,8 @@
           <a class="home-link" href="#">View all <i class="fa fa-arrow-right"></i></a>
         </div>
 
-        <div class="home-dogs">
-          <article class="home-card home-dog">
-            <div class="home-dog__media" role="img" aria-label="Dog placeholder"></div>
-            <div class="home-dog__body">
-              <h3 class="home-dog__name">Buddy</h3>
-              <p class="home-text--muted">Mixed • 2 yrs</p>
-              <a class="home-btn home-btn--sm" href="#">Adopt me</a>
-            </div>
-          </article>
-
-          <article class="home-card home-dog">
-            <div class="home-dog__media"></div>
-            <div class="home-dog__body">
-              <h3 class="home-dog__name">Luna</h3>
-              <p class="home-text--muted">Beagle • 1.5 yrs</p>
-              <a class="home-btn home-btn--sm" href="#">Adopt me</a>
-            </div>
-          </article>
-
-          <article class="home-card home-dog">
-            <div class="home-dog__media"></div>
-            <div class="home-dog__body">
-              <h3 class="home-dog__name">Max</h3>
-              <p class="home-text--muted">Shepherd • 3 yrs</p>
-              <a class="home-btn home-btn--sm" href="#">Adopt me</a>
-            </div>
-          </article>
-
-          <article class="home-card home-dog">
-            <div class="home-dog__media"></div>
-            <div class="home-dog__body">
-              <h3 class="home-dog__name">Daisy</h3>
-              <p class="home-text--muted">Terrier • 10 mo</p>
-              <a class="home-btn home-btn--sm" href="#">Adopt me</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== How It Works ===== -->
-    <section class="home-section home-section--how">
-      <div class="home-container">
-        <div class="home-section__head">
-          <h2 class="home-section__title">How it works</h2>
-        </div>
-
-        <div class="home-steps">
-          <div class="home-card home-step">
-            <span class="home-step__icon home-paw--orange"><i class="fa fa-paw"></i></span>
-            <h3 class="home-step__title">Browse</h3>
-            <p class="home-text--muted">Filter by age, size, and personality to find a match.</p>
-          </div>
-
-          <div class="home-card home-step">
-            <span class="home-step__icon home-paw--orange2"><i class="fa fa-paw"></i></span>
-            <h3 class="home-step__title">Apply</h3>
-            <p class="home-text--muted">Complete a quick application so we can get to know you.</p>
-          </div>
-
-          <div class="home-card home-step">
-            <span class="home-step__icon home-paw--green"><i class="fa fa-paw"></i></span>
-            <h3 class="home-step__title">Adopt</h3>
-            <p class="home-text--muted">Meet your new friend and finalize the adoption.</p>
-          </div>
-        </div>
+        <!-- Dog Cards Section (will be dynamically populated) -->
+        <div class="home-dogs" id="dog-cards-container"></div>
       </div>
     </section>
   </main>
@@ -158,11 +92,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('home-year').textContent = new Date().getFullYear();
-    const homeBtn = document.querySelector('.home-nav__toggle');
-    const homeNav = document.querySelector('.home-nav');
-    homeBtn.addEventListener('click', () => homeNav.classList.toggle('is-open'));
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
