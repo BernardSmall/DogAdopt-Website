@@ -25,7 +25,7 @@ const dogs = [
     image: "Photos/GoldenRetriever.png",
   },
   {
-    name: "Daisy",
+    name: "Gabby",
     breed: "Great Dane",
     age: "6 months",
     image: "Photos/GreatDane.png",
@@ -54,6 +54,80 @@ const dogs = [
     age: "14 years",
     image: "Photos/Yorkie.png",
   },
+
+  {
+    name: "Husk",
+    breed: "Husky",
+    age: "9 months",
+    image: "Photos/Husky.png",
+  },
+  {
+    name: "Puggy",
+    breed: "Pug",
+    age: "5 years",
+    image: "Photos/Pug.png",
+  },
+  {
+    name: "Shnotz",
+    breed: "Schauzer",
+    age: "7 months",
+    image: "Photos/Shnauzer.png",
+  },
+  {
+    name: "Lad",
+    breed: "Scottish Terrier",
+    age: "3.5 years",
+    image: "Photos/ScottishTerrier.png",
+  },
+  {
+    name: "Bagle",
+    breed: "Beagle",
+    age: "1 years",
+    image: "Photos/Beagle.png",
+  },
+   {
+    name: "German Shepard 2",
+    breed: "German Shepherd",
+    age: "3 years",
+    image: "Photos/GermanShepard2.png", // Replace with actual path
+  },
+  {
+    name: "Daisy",
+    breed: "Dachshund",
+    age: "2 years",
+    image: "Photos/Dachsund.png", // Replace with actual path
+  },
+  {
+    name: "Rocky",
+    breed: "Rottweiler",
+    age: "4 years",
+    image: "Photos/Rotweiler.png", // Replace with actual path
+  },
+  {
+    name: "Max",
+    breed: "Boxer",
+    age: "5 years",
+    image: "Photos/Boxer.png", // Replace with actual path
+  },
+  {
+    name: "Benny",
+    breed: "Basset Hound",
+    age: "6 years",
+    image: "Photos/BassetHound.png", // Replace with actual path
+  },
+  {
+    name: "Spot",
+    breed: "Dalmatian",
+    age: "1 year",
+    image: "Photos/Dalmation.png", // Replace with actual path
+  },
+  {
+    name: "Scout",
+    breed: "Border Collie",
+    age: "2.5 years",
+    image: "Photos/BorderCollie.png", // Replace with actual path
+  }
+  
 ];
 
 // Function to create and display dog cards dynamically
