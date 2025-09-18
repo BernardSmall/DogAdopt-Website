@@ -126,7 +126,43 @@ const dogs = [
     breed: "Border Collie",
     age: "2.5 years",
     image: "Photos/BorderCollie.png", // Replace with actual path
-  }
+  },
+  {
+    name: "Milo",
+    breed: "Alaskan Malamut",
+    age: "4 years",
+    image: "Photos/AlaskanMalamut.png", // Replace with actual path
+  },
+  {
+    name: "Boer",
+    breed: "Boerbull",
+    age: "5 years",
+    image: "Photos/Boerbull.png", // Replace with actual path
+  },
+  {
+    name: "Bella",
+    breed: "French Bulldog",
+    age: "2 years",
+    image: "Photos/FrenchBullDog.png", // Replace with actual path
+  },
+  {
+    name: "Rex",
+    breed: "Rhodesian Ridgeback",
+    age: "6 years",
+    image: "Photos/RhodesianRidgeback.png", // Replace with actual path
+  },
+  {
+    name: "Luna",
+    breed: "Shih Tzu",
+    age: "1 year",
+    image: "Photos/ShiTzu.png", // Replace with actual path
+  },
+  {
+    name: "Swiss Shepard",
+    breed: "Swiss Shepherd",
+    age: "3 years",
+    image: "Photos/SwissShepard.png", // Replace with actual path
+  },
   
 ];
 
