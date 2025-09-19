@@ -7,7 +7,7 @@ const dogs = [
     image: "Photos/BostonTerrier.png",  // Local image path (replace with actual path)
   },
   {
-    name: "bo'oh oh wah'ah",
+    name: "bo'oh o' wah'ah",
     breed: "English Bull dog",
     age: "1.5 years",
     image: "Photos/EnglishBullDog.png",
@@ -98,7 +98,7 @@ const dogs = [
     image: "Photos/Dachsund.png", // Replace with actual path
   },
   {
-    name: "George floyed",
+    name: "mr T",
     breed: "Rottweiler",
     age: "4 years",
     image: "Photos/Rotweiler.png", // Replace with actual path
@@ -152,7 +152,7 @@ const dogs = [
     image: "Photos/RhodesianRidgeback.png", // Replace with actual path
   },
   {
-    name: "Yo Phon LINGING",
+    name: "Lee",
     breed: "Shih Tzu",
     age: "1 year",
     image: "Photos/ShiTzu.png", // Replace with actual path

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DogAdopt — About Us</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- About page styles (vw/vh units) -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="about">
+  <!-- ===== Header / Navbar (matches homepage structure) ===== -->
+  <header class="about-header">
+    <div class="about-container about-header__inner">
+      <a class="about-brand" href="HomePage.html">
+        <span class="about-brand__icon"><i class="fa fa-paw"></i></span>
+        <span class="about-brand__name">DogAdopt</span>
+      </a>
+
+      <nav class="about-nav" aria-label="Primary">
+        <a href="HomePage.html" class="about-nav__link">Home</a>
+        <a href="AboutUs.html" class="about-nav__link is-active">About</a>
+        <a href="dogs.html" class="about-nav__link">Dogs</a>
+        <a href="#" class="about-nav__link">Adopt</a>
+        <a href="#" class="about-nav__link">Contact</a>
+      </nav>
+
+      <div class="about-header__cta">
+        <a class="about-btn about-btn--outline" href="#">Sign in</a>
+        <a class="about-btn" href="SignUp.html">Sign up</a>
+      </div>
+
+      <button class="about-nav__toggle" aria-label="Open menu">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="about-main">
+    <!-- ===== Hero ===== -->
+    <section class="about-hero">
+      <div class="about-container about-hero__inner">
+        <div class="about-hero__text">
+          <h1 class="about-hero__title">About Us</h1>
+          <p class="about-hero__subtitle">
+            We’re a community of volunteers and adopters helping dogs find loving forever homes.
+          </p>
+          <div class="about-hero__badges">
+            <span class="about-paw about-paw--orange"><i class="fa fa-paw"></i></span>
+            <span class="about-paw about-paw--orange2"><i class="fa fa-paw"></i></span>
+            <span class="about-paw about-paw--green"><i class="fa fa-paw"></i></span>
+          </div>
+        </div>
+
+        <div class="about-hero__panel" aria-hidden="true">
+          <div class="about-hero__stat">
+            <strong>2.4k+</strong>
+            <span>Adoptions</span>
+          </div>
+          <div class="about-hero__stat">
+            <strong>120</strong>
+            <span>Active volunteers</span>
+          </div>
+          <div class="about-hero__stat">
+            <strong>85%</strong>
+            <span>First-month matches</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Our Story ===== -->
+    <section class="about-section">
+      <div class="about-container about-grid about-story">
+        <div class="about-card about-story__card">
+          <h2 class="about-h2">Our Mission</h2>
+          <p class="about-muted">
+            To connect dogs with caring adopters through a simple, transparent process and lifelong support.
+          </p>
+        </div>
+
+        <div class="about-card about-story__card">
+          <h2 class="about-h2">Our Story</h2>
+          <p class="about-muted">
+            Started by a small foster group, DogAdopt grew into a platform that helps shelters reach more families,
+            reduce stays, and improve matches using personality profiles and post-adoption guidance.
+          </p>
+        </div>
+
+        <div class="about-card about-story__card">
+          <h2 class="about-h2">What We Do</h2>
+          <ul class="about-list">
+            <li>Partner with shelters & rescues</li>
+            <li>Offer training & care resources</li>
+            <li>Support fosters and volunteers</li>
+            <li>Host adoption events</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Team ===== -->
+    <section class="about-section about-section--alt">
+      <div class="about-container">
+        <div class="about-section__head">
+          <h2 class="about-h2">Meet the Team</h2>
+        </div>
+
+        <div class="about-team">
+          <!-- Card -->
+          <article class="about-card about-person">
+            <div class="about-person__media" role="img" aria-label="Team member placeholder"></div>
+            <div class="about-person__body">
+              <h3 class="about-person__name">Ava Thompson</h3>
+              <p class="about-muted">Director • Behavior & Training</p>
+            </div>
+          </article>
+
+          <article class="about-card about-person">
+            <div class="about-person__media"></div>
+            <div class="about-person__body">
+              <h3 class="about-person__name">Luis Ortega</h3>
+              <p class="about-muted">Shelter Partnerships</p>
+            </div>
+          </article>
+
+          <article class="about-card about-person">
+            <div class="about-person__media"></div>
+            <div class="about-person__body">
+              <h3 class="about-person__name">Maya Chen</h3>
+              <p class="about-muted">Volunteer Programs</p>
+            </div>
+          </article>
+
+          <article class="about-card about-person">
+            <div class="about-person__media"></div>
+            <div class="about-person__body">
+              <h3 class="about-person__name">Sam Patel</h3>
+              <p class="about-muted">Community Outreach</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Values / CTA ===== -->
+    <section class="about-section">
+      <div class="about-container about-values">
+        <div class="about-card about-values__card">
+          <h2 class="about-h2">Our Values</h2>
+          <ul class="about-list">
+            <li>Compassion & respect</li>
+            <li>Transparency & trust</li>
+            <li>Education & support</li>
+            <li>Community & inclusivity</li>
+          </ul>
+        </div>
+
+        <div class="about-card about-values__cta">
+          <h2 class="about-h2">Join our mission</h2>
+          <p class="about-muted">Become a foster, volunteer, or adopter today.</p>
+          <div class="about-actions">
+            <a class="about-btn about-btn--lg" href="#">Adopt now</a>
+            <a class="about-btn about-btn--ghost about-btn--lg" href="#">Become a volunteer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer (matches homepage structure) ===== -->
+  <footer class="about-footer">
+    <div class="about-container about-footer__inner">
+      <p class="about-footer__copy">© <span id="about-year"></span> DogAdopt</p>
+      <nav class="about-footer__nav" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="about-footer__social">
+        <span class="about-paw about-paw--orange" aria-label="Instagram"><i class="fa fa-paw"></i></span>
+        <span class="about-paw about-paw--orange2" aria-label="Twitter/X"><i class="fa fa-paw"></i></span>
+        <span class="about-paw about-paw--green" aria-label="Facebook"><i class="fa fa-paw"></i></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('about-year').textContent = new Date().getFullYear();
+    const btn = document.querySelector('.about-nav__toggle');
+    const nav = document.querySelector('.about-nav');
+    btn.addEventListener('click', ()=> nav.classList.toggle('is-open'));
+  </script>
+</body>
+</html>

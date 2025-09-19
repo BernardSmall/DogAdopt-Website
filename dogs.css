@@ -1,0 +1,104 @@
+/* ===== Reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #F6F2ED; color: #1F2937; }
+
+/* ===== Navbar ===== */
+.dogs-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 2vh 5vw;
+  border-bottom: 0.3vh solid #262626;
+  box-shadow: 0.3vh 0.3vh 0 #262626;
+}
+.dogs-nav__brand {
+  font-size: 2.5vh;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+}
+.dogs-nav__links {
+  list-style: none;
+  display: flex;
+  gap: 2vw;
+}
+.dogs-nav__links a {
+  text-decoration: none;
+  color: #1F2937;
+  font-size: 2vh;
+  font-weight: 600;
+}
+.dogs-nav__links .active {
+  border-bottom: 0.4vh solid #FF914D;
+}
+.dogs-nav__buttons {
+  display: flex;
+  gap: 1vw;
+}
+.dogs-btn {
+  padding: 1vh 2vw;
+  border: 0.25vh solid #262626;
+  border-radius: 1vh;
+  box-shadow: 0.3vh 0.3vh 0 #262626;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+.dogs-btn--orange { background: #FF914D; color: #fff; }
+.dogs-btn--white { background: #fff; color: #1F2937; }
+
+/* ===== Hero ===== */
+.dogs-hero {
+  text-align: center;
+  padding: 10vh 5vw;
+}
+.dogs-hero h1 {
+  font-size: 6vh;
+  margin-bottom: 2vh;
+}
+.dogs-hero p {
+  font-size: 2.5vh;
+  color: #6B7280;
+}
+
+/* ===== Dogs Grid ===== */
+.dogs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25vw, 1fr));
+  gap: 4vh;
+  padding: 5vh 5vw;
+}
+.dog-card {
+  background: #F9F5EF;
+  border: 0.25vh solid #262626;
+  border-radius: 1vh;
+  box-shadow: 0.3vh 0.3vh 0 #262626;
+  padding: 3vh 2vw;
+  text-align: center;
+}
+.dog-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 1vh;
+  margin-bottom: 2vh;
+}
+.dog-card h2 {
+  font-size: 3vh;
+  margin-bottom: 1vh;
+}
+.dog-card p {
+  font-size: 2vh;
+  color: #6B7280;
+  margin-bottom: 2vh;
+}
+
+/* ===== Footer ===== */
+.dogs-footer {
+  text-align: center;
+  padding: 4vh 2vw;
+  border-top: 0.25vh solid #262626;
+  margin-top: 5vh;
+}
