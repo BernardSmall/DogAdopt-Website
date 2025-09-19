@@ -7,19 +7,19 @@ const dogs = [
     image: "Photos/BostonTerrier.png",  // Local image path (replace with actual path)
   },
   {
-    name: "Luna",
+    name: "bo'oh oh wah'ah",
     breed: "English Bull dog",
     age: "1.5 years",
     image: "Photos/EnglishBullDog.png",
   },
   {
-    name: "Max",
+    name: "Maximus",
     breed: "German Shepard",
     age: "3 years",
     image: "Photos/GermanShepard.png",
   },
   {
-    name: "Daisy",
+    name: "Inca",
     breed: "Golden Retriever",
     age: "10 months",
     image: "Photos/GoldenRetriever.png",
@@ -31,7 +31,7 @@ const dogs = [
     image: "Photos/GreatDane.png",
   },
   {
-    name: "Daisy",
+    name: "Mr World Wide",
     breed: "PitBull",
     age: "10 years",
     image: "Photos/PitBull.png",
@@ -43,7 +43,7 @@ const dogs = [
     image: "Photos/Poodle.png",
   },
   {
-    name: "Daisy",
+    name: "Jamal-que",
     breed: "Staffy",
     age: "3.5 years",
     image: "Photos/Staffy.png",
@@ -86,7 +86,7 @@ const dogs = [
     image: "Photos/Beagle.png",
   },
    {
-    name: "German Shepard 2",
+    name: "Jan Allerman",
     breed: "German Shepherd",
     age: "3 years",
     image: "Photos/GermanShepard2.png", // Replace with actual path
@@ -98,13 +98,13 @@ const dogs = [
     image: "Photos/Dachsund.png", // Replace with actual path
   },
   {
-    name: "Rocky",
+    name: "George floyed",
     breed: "Rottweiler",
     age: "4 years",
     image: "Photos/Rotweiler.png", // Replace with actual path
   },
   {
-    name: "Max",
+    name: "Rocky",
     breed: "Boxer",
     age: "5 years",
     image: "Photos/Boxer.png", // Replace with actual path
@@ -134,13 +134,13 @@ const dogs = [
     image: "Photos/AlaskanMalamut.png", // Replace with actual path
   },
   {
-    name: "Boer",
+    name: "Jaco",
     breed: "Boerbull",
     age: "5 years",
     image: "Photos/Boerbull.png", // Replace with actual path
   },
   {
-    name: "Bella",
+    name: "Croissant ass chien",
     breed: "French Bulldog",
     age: "2 years",
     image: "Photos/FrenchBullDog.png", // Replace with actual path
@@ -152,13 +152,13 @@ const dogs = [
     image: "Photos/RhodesianRidgeback.png", // Replace with actual path
   },
   {
-    name: "Luna",
+    name: "Yo Phon LINGING",
     breed: "Shih Tzu",
     age: "1 year",
     image: "Photos/ShiTzu.png", // Replace with actual path
   },
   {
-    name: "Swiss Shepard",
+    name: "Mayo Monkey",
     breed: "Swiss Shepherd",
     age: "3 years",
     image: "Photos/SwissShepard.png", // Replace with actual path
@@ -166,14 +166,17 @@ const dogs = [
   
 ];
 
-// Function to create and display dog cards dynamically
+
+
+
+// Function to display the first 4 dogs
 function displayDogCards(dogs) {
   const container = document.getElementById('dog-cards-container');
   container.innerHTML = ''; // Clear previous content
 
-  dogs.forEach(dog => {
-    console.log(dog.image); // Debugging image paths
-
+  // Slice the array to only display first 4 dogs
+  dogs.slice(0, 4).forEach(dog => {
+    // Create the card elements
     const card = document.createElement('article');
     card.classList.add('home-card', 'home-dog');
 
@@ -196,6 +199,8 @@ function displayDogCards(dogs) {
     adoptBtn.classList.add('home-btn', 'home-btn--sm');
     adoptBtn.href = "#";
     adoptBtn.textContent = "Adopt me";
+    adoptBtn.style.fontWeight = "bold"; // Bold text
+    adoptBtn.style.textAlign = "center"; // Center text
     adoptBtn.addEventListener('click', function() {
       alert(`You have chosen to adopt ${dog.name}. Thank you!`);
     });
@@ -209,5 +214,15 @@ function displayDogCards(dogs) {
   });
 }
 
-// Call the function to display the dog cards
+// Initial display of dog cards
 displayDogCards(dogs);
+
+// Optional: Add search/filter functionality
+const searchInput = document.querySelector('#search-input');
+if(searchInput) {
+  searchInput.addEventListener('input', function(event) {
+    const query = event.target.value.toLowerCase();
+    const filteredDogs = dogs.filter(dog => dog.name.toLowerCase().includes(query) || dog.breed.toLowerCase().includes(query));
+    displayDogCards(filteredDogs);
+  });
+}
