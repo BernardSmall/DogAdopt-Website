@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DogAdopt — Log In</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Homepage-only CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="home">
+  <!-- ===== Header ===== -->
+  <header class="home-header">
+    <div class="home-container home-header__inner">
+      <a class="home-brand" href="HomePage.html">
+        <span class="home-brand__icon"><i class="fa fa-paw"></i></span>
+        <span class="home-brand__name">DogAdopt</span>
+      </a>
+
+      <nav class="home-nav" aria-label="Primary">
+        <a href="HomePage.html" class="home-nav__link">Home</a>
+        <a href="AboutUs.html" class="home-nav__link">About</a>
+        <a href="dogs.html" class="home-nav__link">Dogs</a>
+        <a href="adopt.html" class="home-nav__link">Adopt</a>
+        <a href="Contact.html" class="home-nav__link">Contact</a>
+      </nav>
+
+      <div class="home-header__cta">
+        <a class="home-btn home-btn--outline is-active" href="login.html">Log in</a>
+        <a class="home-btn" href="SignUp.html">Sign up</a>
+      </div>
+
+      <button class="home-nav__toggle" aria-label="Open menu">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="card" role="region" aria-labelledby="card-title">
+      <header class="card__head">
+        <h1 id="card-title">Welcome back,</h1>
+        <p class="card__sub">log in to continue</p>
+      </header>
+
+      <form class="form" action="#" method="post" novalidate>
+        <div class="field">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Email" required />
+        </div>
+
+        <div class="field">
+          <label class="sr-only" for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="Password" required />
+        </div>
+
+        <div class="social-row" aria-label="Continue with">
+          <!-- Left button -->
+          <button class="social-btn social-btn--orange" type="button" aria-label="Continue with Apple">
+            <i class="fa fa-paw"></i>
+          </button>
+
+          <!-- Middle button -->
+          <button class="social-btn social-btn--orange2" type="button" aria-label="Continue with Google">
+            <i class="fa fa-paw"></i>
+          </button>
+
+          <!-- Right button -->
+          <button class="social-btn social-btn--green" type="button" aria-label="Continue with Facebook">
+            <i class="fa fa-paw"></i>
+          </button>
+        </div>
+
+        <button class="cta" type="submit">
+          Let’s go <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="home-footer">
+    <div class="home-container home-footer__inner">
+      <p class="home-footer__copy">© <span id="home-year"></span> DogAdopt</p>
+      <nav class="home-footer__nav" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="Contact.html">Contact</a>
+      </nav>
+      <div class="home-footer__social">
+        <span class="home-paw-circle home-paw--orange" aria-label="Instagram"><i class="fa fa-paw"></i></span>
+        <span class="home-paw-circle home-paw--orange2" aria-label="Twitter/X"><i class="fa fa-paw"></i></span>
+        <span class="home-paw-circle home-paw--green" aria-label="Facebook"><i class="fa fa-paw"></i></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('home-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
