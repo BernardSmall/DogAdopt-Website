@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DogAdopt — Adopt</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="adopt.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="adopt">
+  <!-- ===== Header ===== -->
+  <header class="adopt-header">
+    <div class="adopt-container adopt-header__inner">
+      <a class="adopt-brand" href="HomePage.html">
+        <span class="adopt-brand__icon"><i class="fa fa-paw"></i></span>
+        <span class="adopt-brand__name">DogAdopt</span>
+      </a>
+
+      <nav class="adopt-nav" aria-label="Primary">
+        <a href="HomePage.html" class="adopt-nav__link">Home</a>
+        <a href="AboutUs.html" class="adopt-nav__link">About</a>
+        <a href="dogs.html" class="adopt-nav__link">Dogs</a>
+        <a href="adopt.html" class="adopt-nav__link is-active">Adopt</a>
+        <a href="Contact.html" class="adopt-nav__link">Contact</a>
+      </nav>
+
+      <div class="adopt-header__cta">
+        <a class="adopt-btn adopt-btn--outline" href="#">Log in</a>
+        <a class="adopt-btn" href="SignUp.html">Sign up</a>
+      </div>
+
+      <button class="adopt-nav__toggle" aria-label="Open menu">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="adopt-main">
+    <section class="adopt-section">
+      <div class="adopt-container">
+        <div class="adopt-section__head">
+          <h1 class="adopt-section__title">Adopt <span id="dog-name"></span></h1>
+          <p class="adopt-section__subtitle">Please fill out the form below to start the adoption process.</p>
+        </div>
+
+        <div class="adopt-form-container">
+          <form class="adopt-form" id="adoption-form">
+            <input type="hidden" id="dog-name-input" name="dog-name">
+            <div class="adopt-form__group">
+              <label for="name" class="adopt-form__label">Name</label>
+              <input type="text" id="name" name="name" class="adopt-form__input" placeholder="Your Name" required>
+            </div>
+            <div class="adopt-form__group">
+              <label for="email" class="adopt-form__label">Email</label>
+              <input type="email" id="email" name="email" class="adopt-form__input" placeholder="Your Email" required>
+            </div>
+            <div class="adopt-form__group">
+              <label for="phone" class="adopt-form__label">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="adopt-form__input" placeholder="Your Phone Number" required>
+            </div>
+            <div class="adopt-form__group">
+              <label for="address" class="adopt-form__label">Address</label>
+              <textarea id="address" name="address" class="adopt-form__textarea" placeholder="Your Address" required></textarea>
+            </div>
+            <button type="submit" class="adopt-btn adopt-btn--lg">Apply for Adoption</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="notification" id="success-notification">
+      <p>Your adoption form has been successfully submitted!</p>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="adopt-footer">
+    <div class="adopt-container adopt-footer__inner">
+      <p class="adopt-footer__copy">© <span id="adopt-year"></span> DogAdopt</p>
+      <nav class="adopt-footer__nav" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="Contact.html">Contact</a>
+      </nav>
+      <div class="adopt-footer__social">
+        <span class="adopt-paw-circle adopt-paw--orange" aria-label="Instagram"><i class="fa fa-paw"></i></span>
+        <span class="adopt-paw-circle adopt-paw--orange2" aria-label="Twitter/X"><i class="fa fa-paw"></i></span>
+        <span class="adopt-paw-circle adopt-paw--green" aria-label="Facebook"><i class="fa fa-paw"></i></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('adopt-year').textContent = new Date().getFullYear();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const dogName = urlParams.get('dog');
+
+    if (dogName) {
+      document.getElementById('dog-name').textContent = dogName;
+      document.getElementById('dog-name-input').value = dogName;
+    }
+
+    const adoptionForm = document.getElementById('adoption-form');
+    const successNotification = document.getElementById('success-notification');
+
+    adoptionForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      successNotification.style.display = 'block';
+      adoptionForm.reset();
+      setTimeout(() => {
+        successNotification.style.display = 'none';
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
