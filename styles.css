@@ -797,8 +797,8 @@ html, body { height: 100%; margin: 0; }
 .about-person{ width: 21vw; }
 .about-person__media{
   width:100%; height: 14vw;
-  background: linear-gradient(0deg, rgba(0,0,0,.05), rgba(0,0,0,.05)),
-              linear-gradient(135deg, #f7e5d6, #f3f3f3);
+  background-size: cover;
+  background-position: center;
   border-bottom: .26vw solid var(--border);
 }
 .about-person__body{ padding: 2vh 1.4vw; }

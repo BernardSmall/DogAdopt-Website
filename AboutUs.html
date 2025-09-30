@@ -110,40 +110,7 @@
           <h2 class="about-h2">Meet the Team</h2>
         </div>
 
-        <div class="about-team">
-          <!-- Card -->
-          <article class="about-card about-person">
-            <div class="about-person__media" role="img" aria-label="Team member placeholder"></div>
-            <div class="about-person__body">
-              <h3 class="about-person__name">Ava Thompson</h3>
-              <p class="about-muted">Director • Behavior & Training</p>
-            </div>
-          </article>
-
-          <article class="about-card about-person">
-            <div class="about-person__media"></div>
-            <div class="about-person__body">
-              <h3 class="about-person__name">Luis Ortega</h3>
-              <p class="about-muted">Shelter Partnerships</p>
-            </div>
-          </article>
-
-          <article class="about-card about-person">
-            <div class="about-person__media"></div>
-            <div class="about-person__body">
-              <h3 class="about-person__name">Maya Chen</h3>
-              <p class="about-muted">Volunteer Programs</p>
-            </div>
-          </article>
-
-          <article class="about-card about-person">
-            <div class="about-person__media"></div>
-            <div class="about-person__body">
-              <h3 class="about-person__name">Sam Patel</h3>
-              <p class="about-muted">Community Outreach</p>
-            </div>
-          </article>
-        </div>
+        <div class="about-team" id="team-cards-container"></div>
       </div>
     </section>
 
@@ -189,6 +156,8 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
+  <script src="about.js"></script>
   <script>
     document.getElementById('about-year').textContent = new Date().getFullYear();
     const btn = document.querySelector('.about-nav__toggle');

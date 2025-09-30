@@ -1,3 +1,5 @@
+
+
 // Dog data - Replace with your actual image paths
 const dogs = [
   {
