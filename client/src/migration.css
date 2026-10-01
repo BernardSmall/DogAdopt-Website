@@ -1,0 +1,24 @@
+/* React integration and request states. Original styles remain the visual authority. */
+button { cursor:pointer; }
+button:disabled { cursor:wait; opacity:.65; }
+.home-dog__media img { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:contain; }
+.home-dog__media { position:relative; overflow:hidden; background:#FFF8EB; }
+.loading .stage { overflow:hidden; }
+.footer-link { display:inline-flex; align-items:center; min-height:44px; padding:0; border:0; background:none; color:var(--text); font:inherit; font-size:1rem; font-weight:800; }
+.app-notice { width:min(92%,1320px); margin:1.5rem auto; }
+.async-state { padding:1rem 0; font-size:1rem; }
+.field-error { color:#9c2c1c; font-size:1rem; margin:.5rem 0 0; }
+.form-status { width:100%; font-size:1rem; margin:.75rem 0 0; overflow-wrap:anywhere; }
+.form-status.is-error { color:#9c2c1c; }
+.form-status.is-success { color:#246b4d; }
+[aria-invalid="true"] { border-color:#9c2c1c !important; }
+.form-status,.field-error { line-height:1.5; }
+.about #site-navigation,.about #site-account-links { order:3; }
+@media(min-width:60rem){
+  .about #site-navigation,.about #site-account-links { order:0; }
+  .home-dogs { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  #dog-cards-container { grid-template-columns:repeat(4,minmax(0,1fr)); }
+}
+@media(prefers-reduced-motion:reduce){
+  .wheel-and-hamster * { animation:none; }
+}

@@ -1,0 +1,272 @@
+[
+  {
+    "name": "Penny",
+    "breed": "Boston Terrier",
+    "age": "2 years",
+    "image": "/Photos/BostonTerrier.png",
+    "id": "dog-1",
+    "featured": true,
+    "catalog": false
+  },
+  {
+    "name": "bo'oh o' wah'ah",
+    "breed": "English Bull dog",
+    "age": "1.5 years",
+    "image": "/Photos/EnglishBullDog.png",
+    "id": "dog-2",
+    "featured": true,
+    "catalog": false
+  },
+  {
+    "name": "Maximus",
+    "breed": "German Shepard",
+    "age": "3 years",
+    "image": "/Photos/GermanShepard.png",
+    "id": "dog-3",
+    "featured": true,
+    "catalog": false
+  },
+  {
+    "name": "Inca",
+    "breed": "Golden Retriever",
+    "age": "10 months",
+    "image": "/Photos/GoldenRetriever.png",
+    "id": "dog-4",
+    "featured": true,
+    "catalog": false
+  },
+  {
+    "name": "Gabby",
+    "breed": "Great Dane",
+    "age": "6 months",
+    "image": "/Photos/GreatDane.png",
+    "id": "dog-5",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Mr World Wide",
+    "breed": "PitBull",
+    "age": "10 years",
+    "image": "/Photos/PitBull.png",
+    "id": "dog-6",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Daisy",
+    "breed": "Poodle",
+    "age": "11 months",
+    "image": "/Photos/Poodle.png",
+    "id": "dog-7",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Jamal-que",
+    "breed": "Staffy",
+    "age": "3.5 years",
+    "image": "/Photos/Staffy.png",
+    "id": "dog-8",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Milo",
+    "breed": "Yorkie",
+    "age": "14 years",
+    "image": "/Photos/Yorkie.png",
+    "id": "dog-9",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Husk",
+    "breed": "Husky",
+    "age": "9 months",
+    "image": "/Photos/Husky.png",
+    "id": "dog-10",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Puggy",
+    "breed": "Pug",
+    "age": "5 years",
+    "image": "/Photos/Pug.png",
+    "id": "dog-11",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Shnotz",
+    "breed": "Schauzer",
+    "age": "7 months",
+    "image": "/Photos/Shnauzer.png",
+    "id": "dog-12",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Lad",
+    "breed": "Scottish Terrier",
+    "age": "3.5 years",
+    "image": "/Photos/ScottishTerrier.png",
+    "id": "dog-13",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Bagle",
+    "breed": "Beagle",
+    "age": "1 years",
+    "image": "/Photos/Beagle.png",
+    "id": "dog-14",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Jan Allerman",
+    "breed": "German Shepherd",
+    "age": "3 years",
+    "image": "/Photos/GermanShepard2.png",
+    "id": "dog-15",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Daisy",
+    "breed": "Dachshund",
+    "age": "2 years",
+    "image": "/Photos/Dachsund.png",
+    "id": "dog-16",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "mr T",
+    "breed": "Rottweiler",
+    "age": "4 years",
+    "image": "/Photos/Rotweiler.png",
+    "id": "dog-17",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Rocky",
+    "breed": "Boxer",
+    "age": "5 years",
+    "image": "/Photos/Boxer.png",
+    "id": "dog-18",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Benny",
+    "breed": "Basset Hound",
+    "age": "6 years",
+    "image": "/Photos/BassetHound.png",
+    "id": "dog-19",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Spot",
+    "breed": "Dalmatian",
+    "age": "1 year",
+    "image": "/Photos/Dalmation.png",
+    "id": "dog-20",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Scout",
+    "breed": "Border Collie",
+    "age": "2.5 years",
+    "image": "/Photos/BorderCollie.png",
+    "id": "dog-21",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Milo",
+    "breed": "Alaskan Malamut",
+    "age": "4 years",
+    "image": "/Photos/AlaskanMalamut.png",
+    "id": "dog-22",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Jaco",
+    "breed": "Boerbull",
+    "age": "5 years",
+    "image": "/Photos/Boerbull.png",
+    "id": "dog-23",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Croissant ass chien",
+    "breed": "French Bulldog",
+    "age": "2 years",
+    "image": "/Photos/FrenchBullDog.png",
+    "id": "dog-24",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Rex",
+    "breed": "Rhodesian Ridgeback",
+    "age": "6 years",
+    "image": "/Photos/RhodesianRidgeback.png",
+    "id": "dog-25",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Lee",
+    "breed": "Shih Tzu",
+    "age": "1 year",
+    "image": "/Photos/ShiTzu.png",
+    "id": "dog-26",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "name": "Mayo Monkey",
+    "breed": "Swiss Shepherd",
+    "age": "3 years",
+    "image": "/Photos/SwissShepard.png",
+    "id": "dog-27",
+    "featured": false,
+    "catalog": false
+  },
+  {
+    "id": "buddy",
+    "name": "Buddy",
+    "breed": "Golden Retriever",
+    "age": "2 years old",
+    "image": "/Photos/GoldenRetriever.png",
+    "featured": false,
+    "catalog": true
+  },
+  {
+    "id": "luna",
+    "name": "Luna",
+    "breed": "Beagle",
+    "age": "1.5 years old",
+    "image": "/Photos/Beagle.png",
+    "featured": false,
+    "catalog": true
+  },
+  {
+    "id": "max",
+    "name": "Max",
+    "breed": "German Shepherd",
+    "age": "3 years old",
+    "image": "/Photos/GermanShepard.png",
+    "featured": false,
+    "catalog": true
+  }
+]

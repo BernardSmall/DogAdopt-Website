@@ -35,6 +35,10 @@ function displayStaffCards(staff) {
     const img = document.createElement('img');
     img.src = member.photo;
     img.alt = member.name;
+    img.width = 1024;
+    img.height = 1536;
+    img.loading = "lazy";
+    img.decoding = "async";
     media.appendChild(img);
 
     const body = document.createElement('div');
@@ -57,3 +61,38 @@ function displayStaffCards(staff) {
 }
 
 displayStaffCards(staffmember);
+
+
+const menuButton = document.querySelector('.about-nav__toggle');
+const header = document.querySelector('.about-header');
+const desktopLayout = window.matchMedia('(min-width: 60rem)');
+
+function setMenuOpen(open) {
+  document.body.classList.toggle('about-menu-open', open);
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+
+menuButton.addEventListener('click', () => {
+  setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+});
+header.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+    setMenuOpen(false);
+    menuButton.focus();
+  }
+});
+header.addEventListener('click', event => {
+  if (event.target.closest('a')) setMenuOpen(false);
+});
+desktopLayout.addEventListener('change', () => {
+  const focusedElement = document.activeElement;
+  const focusWillHide = !desktopLayout.matches &&
+    focusedElement.matches('.about-nav a, .about-header__cta a');
+  const toggleWillHide = desktopLayout.matches && focusedElement === menuButton;
+  setMenuOpen(false);
+  if (focusWillHide) menuButton.focus();
+  if (toggleWillHide) header.querySelector('.about-brand').focus();
+});
+document.body.classList.add('about-menu-ready');
+document.getElementById('about-year').textContent = new Date().getFullYear();

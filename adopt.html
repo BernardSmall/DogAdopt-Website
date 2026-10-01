@@ -7,31 +7,32 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="adopt.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="responsive.css" />
 </head>
 <body class="adopt">
   <!-- ===== Header ===== -->
-  <header class="adopt-header">
+  <header class="adopt-header" data-site-header>
     <div class="adopt-container adopt-header__inner">
       <a class="adopt-brand" href="HomePage.html">
         <span class="adopt-brand__icon"><i class="fa fa-paw"></i></span>
         <span class="adopt-brand__name">DogAdopt</span>
       </a>
 
-      <nav class="adopt-nav" aria-label="Primary">
+      <nav class="adopt-nav" id="site-navigation" aria-label="Primary">
         <a href="HomePage.html" class="adopt-nav__link">Home</a>
         <a href="AboutUs.html" class="adopt-nav__link">About</a>
         <a href="dogs.html" class="adopt-nav__link">Dogs</a>
-        <a href="adopt.html" class="adopt-nav__link is-active">Adopt</a>
+        <a href="adopt.html" class="adopt-nav__link is-active" aria-current="page">Adopt</a>
         <a href="Contact.html" class="adopt-nav__link">Contact</a>
       </nav>
 
-      <div class="adopt-header__cta">
+      <div class="adopt-header__cta" id="site-account-links">
         <a class="adopt-btn adopt-btn--outline" href="login.html">Log in</a>
         <a class="adopt-btn" href="SignUp.html">Sign up</a>
       </div>
 
-      <button class="adopt-nav__toggle" aria-label="Open menu">
-        <i class="fa fa-bars"></i>
+      <button class="adopt-nav__toggle" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="site-navigation site-account-links">
+        <i class="fa fa-bars" aria-hidden="true"></i><span>Menu</span>
       </button>
     </div>
   </header>
@@ -114,5 +115,6 @@
       }, 5000);
     });
   </script>
+  <script src="navigation.js"></script>
 </body>
 </html>

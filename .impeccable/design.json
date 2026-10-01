@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T22:39:58.985470+00:00",
+  "title": "Design System: DogAdopt",
+  "extensions": {
+    "colorMeta": {
+      "apricot-orange": {
+        "displayName": "Apricot orange",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15.00% 0.1560 50.21)",
+          "oklch(26.43% 0.1560 50.21)",
+          "oklch(37.86% 0.1560 50.21)",
+          "oklch(49.29% 0.1560 50.21)",
+          "oklch(60.71% 0.1560 50.21)",
+          "oklch(72.14% 0.1560 50.21)",
+          "oklch(83.57% 0.1560 50.21)",
+          "oklch(95.00% 0.1560 50.21)"
+        ],
+        "rampSource": "Synthesized for palette preview; not implemented CSS tokens."
+      },
+      "apricot-pressed": {
+        "displayName": "Apricot pressed",
+        "role": "primary",
+        "tonalRamp": [
+          "oklch(15.00% 0.1573 48.58)",
+          "oklch(26.43% 0.1573 48.58)",
+          "oklch(37.86% 0.1573 48.58)",
+          "oklch(49.29% 0.1573 48.58)",
+          "oklch(60.71% 0.1573 48.58)",
+          "oklch(72.14% 0.1573 48.58)",
+          "oklch(83.57% 0.1573 48.58)",
+          "oklch(95.00% 0.1573 48.58)"
+        ],
+        "rampSource": "Synthesized for palette preview; not implemented CSS tokens."
+      },
+      "paw-red-orange": {
+        "displayName": "Paw red orange",
+        "role": "secondary",
+        "tonalRamp": [
+          "oklch(15.00% 0.1997 36.19)",
+          "oklch(26.43% 0.1997 36.19)",
+          "oklch(37.86% 0.1997 36.19)",
+          "oklch(49.29% 0.1997 36.19)",
+          "oklch(60.71% 0.1997 36.19)",
+          "oklch(72.14% 0.1997 36.19)",
+          "oklch(83.57% 0.1997 36.19)",
+          "oklch(95.00% 0.1997 36.19)"
+        ],
+        "rampSource": "Synthesized for palette preview; not implemented CSS tokens."
+      },
+      "paw-golden-orange": {
+        "displayName": "Paw golden orange",
+        "role": "secondary",
+        "tonalRamp": [
+          "oklch(15.00% 0.1652 54.32)",
+          "oklch(26.43% 0.1652 54.32)",
+          "oklch(37.86% 0.1652 54.32)",
+          "oklch(49.29% 0.1652 54.32)",
+          "oklch(60.71% 0.1652 54.32)",
+          "oklch(72.14% 0.1652 54.32)",
+          "oklch(83.57% 0.1652 54.32)",
+          "oklch(95.00% 0.1652 54.32)"
+        ],
+        "rampSource": "Synthesized for palette preview; not implemented CSS tokens."
+      },
+      "shelter-green": {
+        "displayName": "Shelter green",
+        "role": "secondary",
+        "tonalRamp": [
+          "oklch(15.00% 0.1115 161.45)",
+          "oklch(26.43% 0.1115 161.45)",
+          "oklch(37.86% 0.1115 161.45)",
+          "oklch(49.29% 0.1115 161.45)",
+          "oklch(60.71% 0.1115 161.45)",
+          "oklch(72.14% 0.1115 161.45)",
+          "oklch(83.57% 0.1115 161.45)",
+          "oklch(95.00% 0.1115 161.45)"
+        ],
+        "rampSource": "Synthesized for palette preview; not implemented CSS tokens."
+      },
+      "warm-cream": {
+        "displayName": "Warm cream",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.0079 73.74)",
+          "oklch(26.43% 0.0079 73.74)",
+          "oklch(37.86% 0.0079 73.74)",
+          "oklch(49.29% 0.0079 73.74)",
+          "oklch(60.71% 0.0079 73.74)",
+          "oklch(72.14% 0.0079 73.74)",
+          "oklch(83.57% 0.0079 73.74)",
+          "oklch(95.00% 0.0079 73.74)"
+        ],
+        "rampSource": "Synthesized for palette preview; not implemented CSS tokens."
+      },
+      "light-cream": {
+        "displayName": "Light cream",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.0090 78.28)",
+          "oklch(26.43% 0.0090 78.28)",
+          "oklch(37.86% 0.0090 78.28)",
+          "oklch(49.29% 0.0090 78.28)",
+          "oklch(60.71% 0.0090 78.28)",
+          "oklch(72.14% 0.0090 78.28)",
+          "oklch(83.57% 0.0090 78.28)",
+          "oklch(95.00% 0.0090 78.28)"
+        ],
+        "rampSource": "Synthesized for palette preview; not implemented CSS tokens."
+      },
+      "ink": {
+        "displayName": "Ink",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.0296 256.85)",
+          "oklch(26.43% 0.0296 256.85)",
+          "oklch(37.86% 0.0296 256.85)",
+          "oklch(49.29% 0.0296 256.85)",
+          "oklch(60.71% 0.0296 256.85)",
+          "oklch(72.14% 0.0296 256.85)",
+          "oklch(83.57% 0.0296 256.85)",
+          "oklch(95.00% 0.0296 256.85)"
+        ],
+        "rampSource": "Synthesized for palette preview; not implemented CSS tokens."
+      },
+      "muted-gray": {
+        "displayName": "Muted gray",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.0234 264.36)",
+          "oklch(26.43% 0.0234 264.36)",
+          "oklch(37.86% 0.0234 264.36)",
+          "oklch(49.29% 0.0234 264.36)",
+          "oklch(60.71% 0.0234 264.36)",
+          "oklch(72.14% 0.0234 264.36)",
+          "oklch(83.57% 0.0234 264.36)",
+          "oklch(95.00% 0.0234 264.36)"
+        ],
+        "rampSource": "Synthesized for palette preview; not implemented CSS tokens."
+      },
+      "outline": {
+        "displayName": "Outline",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.0000 89.88)",
+          "oklch(26.43% 0.0000 89.88)",
+          "oklch(37.86% 0.0000 89.88)",
+          "oklch(49.29% 0.0000 89.88)",
+          "oklch(60.71% 0.0000 89.88)",
+          "oklch(72.14% 0.0000 89.88)",
+          "oklch(83.57% 0.0000 89.88)",
+          "oklch(95.00% 0.0000 89.88)"
+        ],
+        "rampSource": "Synthesized for palette preview; not implemented CSS tokens."
+      },
+      "white": {
+        "displayName": "White",
+        "role": "neutral",
+        "tonalRamp": [
+          "oklch(15.00% 0.0000 89.88)",
+          "oklch(26.43% 0.0000 89.88)",
+          "oklch(37.86% 0.0000 89.88)",
+          "oklch(49.29% 0.0000 89.88)",
+          "oklch(60.71% 0.0000 89.88)",
+          "oklch(72.14% 0.0000 89.88)",
+          "oklch(83.57% 0.0000 89.88)",
+          "oklch(95.00% 0.0000 89.88)"
+        ],
+        "rampSource": "Synthesized for palette preview; not implemented CSS tokens."
+      }
+    },
+    "shadows": [
+      {
+        "name": "card",
+        "value": ".35vw .35vw 0 #262626",
+        "purpose": "Public-page cards and buttons."
+      },
+      {
+        "name": "hover",
+        "value": ".4vw .4vw 0 #262626",
+        "purpose": "Public-page button hover."
+      },
+      {
+        "name": "pressed",
+        "value": ".25vw .25vw 0 #262626",
+        "purpose": "Public-page button pressed state."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-transition",
+        "value": ".12s ease",
+        "purpose": "Transform, shadow, and background states."
+      },
+      {
+        "name": "auth-field-transition",
+        "value": ".15s ease",
+        "purpose": "Authentication field focus."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "auth-small",
+        "value": "420px",
+        "purpose": "Authentication adjustments only."
+      },
+      {
+        "name": "form-small",
+        "value": "768px",
+        "purpose": "Contact and adoption pages only; absent on About/Home."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Existing public-page primary treatment; example only.",
+      "html": "<button type=\"button\" class=\"ds-btn-primary\">Adopt now</button>",
+      "css": ".ds-btn-primary{font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;font-weight:800;font-size:1.2vw;padding:1.6vh 1.8vw;border:.26vw solid #262626;border-radius:1.1vw;box-shadow:.35vw .35vw 0 #262626;text-decoration:none;display:inline-block;transition:transform .12s ease,box-shadow .12s ease,background .12s ease;background:var(--accent, #FF914D);color:#fff;} .ds-btn-primary:hover{transform:translate(-.15vw,-.15vw);box-shadow:.4vw .4vw 0 #262626;} .ds-btn-primary:active{transform:none;box-shadow:.25vw .25vw 0 #262626;background:var(--accent-press,#e47633);} .ds-btn-primary:focus-visible{outline:auto;}"
+    },
+    {
+      "name": "Outline button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Existing public-page outline treatment; example only.",
+      "html": "<button type=\"button\" class=\"ds-btn-outline\">Sign in</button>",
+      "css": ".ds-btn-outline{font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;font-weight:800;font-size:1.2vw;padding:1.6vh 1.8vw;border:.26vw solid #262626;border-radius:1.1vw;box-shadow:.35vw .35vw 0 #262626;text-decoration:none;display:inline-block;transition:transform .12s ease,box-shadow .12s ease,background .12s ease;background:#fff;color:var(--text, #1F2937);} .ds-btn-outline:hover{transform:translate(-.15vw,-.15vw);box-shadow:.4vw .4vw 0 #262626;} .ds-btn-outline:active{transform:none;box-shadow:.25vw .25vw 0 #262626;background:var(--accent-press,#e47633);} .ds-btn-outline:focus-visible{outline:auto;}"
+    },
+    {
+      "name": "Ghost button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Existing public-page ghost treatment; example only.",
+      "html": "<button type=\"button\" class=\"ds-btn-ghost\">Volunteer</button>",
+      "css": ".ds-btn-ghost{font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;font-weight:800;font-size:1.2vw;padding:1.6vh 1.8vw;border:.26vw solid #262626;border-radius:1.1vw;box-shadow:.35vw .35vw 0 #262626;text-decoration:none;display:inline-block;transition:transform .12s ease,box-shadow .12s ease,background .12s ease;background:#fff;color:var(--text, #1F2937);} .ds-btn-ghost:hover{transform:translate(-.15vw,-.15vw);box-shadow:.4vw .4vw 0 #262626;} .ds-btn-ghost:active{transform:none;box-shadow:.25vw .25vw 0 #262626;background:var(--accent-press,#e47633);} .ds-btn-ghost:focus-visible{outline:auto;}"
+    },
+    {
+      "name": "Adoption field",
+      "kind": "input",
+      "refersTo": "form-field",
+      "description": "Label and field treatment shared with contact.",
+      "html": "<label class=\"ds-label\" for=\"ds-name\">Name</label><input class=\"ds-input\" id=\"ds-name\" placeholder=\"Your name\">",
+      "css": ".ds-label{display:block;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;font-weight:700;margin-bottom:1vh;font-size:1.1vw;color:var(--text,#1F2937);} .ds-input{width:100%;padding:1.5vh 1.5vw;border-radius:.8vw;border:.2vw solid #262626;background:#fff;font-size:1.1vw;color:var(--text,#1F2937);} .ds-input:focus-visible{outline:auto;}"
+    },
+    {
+      "name": "Primary navigation",
+      "kind": "nav",
+      "description": "Existing text navigation with hover and visual active underlines.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Example navigation\"><a href=\"#\">Home</a><a class=\"ds-current\" href=\"#\">About</a><a href=\"#\">Dogs</a><a href=\"#\">Adopt</a><a href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav{display:flex;gap:1.6vw;font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;} .ds-nav a{color:var(--text,#1F2937);text-decoration:none;font-weight:800;border-bottom:.26vw solid transparent;padding-bottom:.8vh;font-size:1.1vw;} .ds-nav a:hover{border-color:var(--text,#1F2937);} .ds-nav .ds-current{border-color:#fb8c34;} .ds-nav a:focus-visible{outline:auto;}"
+    },
+    {
+      "name": "Story card",
+      "kind": "card",
+      "refersTo": "story-card",
+      "description": "White informational card with hard outline and offset shadow.",
+      "html": "<article class=\"ds-card\"><h2>Our Mission</h2><p>To connect dogs with caring adopters through a simple, transparent process and lifelong support.</p></article>",
+      "css": ".ds-card{font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;background:#fff;color:var(--text,#1F2937);border:.26vw solid #262626;border-radius:1.1vw;box-shadow:.35vw .35vw 0 #262626;padding:3vh 1.6vw;} .ds-card h2{margin:0 0 1vh;font-size:2.4vw;font-weight:900;} .ds-card p{color:var(--muted,#6B7280);font-size:1.1vw;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Friendly adoption noticeboard",
+    "overview": "Warm, playful, and approachable. Cream backgrounds and orange actions support a community noticeboard character. Bold outlines, rounded corners, and paw motifs connect the pages.\n\nThis document records the current implementation, including its limitations. PRODUCT.md records the confirmed demo context. It does not establish new product claims or redesign the interface.",
+    "keyCharacteristics": [
+      "Cream page surfaces with orange actions and green paw accents.",
+      "Heavy dark outlines, rounded cards, and hard offset shadows.",
+      "Bold system typography and short groups of information."
+    ],
+    "rules": [],
+    "dos": [
+      "Do retain the shared palette and outline language when extending the current design.",
+      "Do distinguish the orange primary action from white secondary actions.",
+      "Do use semantic headings and named image alternatives, as the team renderer does."
+    ],
+    "donts": [
+      "Don't treat placeholder profiles or statistics as verified evidence.",
+      "Don't copy the known image overflow, tiny mobile typography, or low-contrast combinations into new work.",
+      "Don't describe absent responsive or interaction states as implemented."
+    ]
+  }
+}

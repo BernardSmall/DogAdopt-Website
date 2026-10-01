@@ -9,7 +9,7 @@
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- About page styles (vw/vh units) -->
+  <!-- Shared styles, including responsive About layout -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="about">
@@ -21,21 +21,21 @@
         <span class="about-brand__name">DogAdopt</span>
       </a>
 
-      <nav class="about-nav" aria-label="Primary">
+      <nav class="about-nav" id="about-navigation" aria-label="Primary">
         <a href="HomePage.html" class="about-nav__link">Home</a>
-        <a href="AboutUs.html" class="about-nav__link is-active">About</a>
+        <a href="AboutUs.html" class="about-nav__link is-active" aria-current="page">About</a>
         <a href="dogs.html" class="about-nav__link">Dogs</a>
         <a href="adopt.html" class="about-nav__link">Adopt</a>
         <a href="Contact.html" class="about-nav__link">Contact</a>
       </nav>
 
-      <div class="about-header__cta">
-        <a class="about-btn about-btn--outline" href="login.html">Sign in</a>
+      <div class="about-header__cta" id="about-account-links">
+        <a class="about-btn about-btn--outline" href="login.html">Log in</a>
         <a class="about-btn" href="SignUp.html">Sign up</a>
       </div>
 
-      <button class="about-nav__toggle" aria-label="Open menu">
-        <i class="fa fa-bars"></i>
+      <button class="about-nav__toggle" type="button" aria-expanded="false" aria-controls="about-navigation about-account-links" aria-label="Open menu">
+        <i class="fa fa-bars" aria-hidden="true"></i><span>Menu</span>
       </button>
     </div>
   </header>
@@ -156,13 +156,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
   <script src="about.js"></script>
-  <script>
-    document.getElementById('about-year').textContent = new Date().getFullYear();
-    const btn = document.querySelector('.about-nav__toggle');
-    const nav = document.querySelector('.about-nav');
-    btn.addEventListener('click', ()=> nav.classList.toggle('is-open'));
-  </script>
+
 </body>
 </html>
