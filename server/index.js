@@ -3,6 +3,7 @@ import { createStore } from './store.js';
 import { createApp } from './app.js';
 
 const port = Number(process.env.PORT || 3001);
+// Bind all interfaces for Render; intentionally ignore any HOST environment variable.
 const host = '0.0.0.0';
 const sessionDays = Number(process.env.SESSION_DAYS || 7);
 

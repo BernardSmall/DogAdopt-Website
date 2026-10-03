@@ -35,11 +35,11 @@ npm start
 
 Open **http://127.0.0.1:3001**. Express serves `dist/`, the original `Photos/`, and the API. React routes support direct navigation and refresh. Deploy the server, `dist/`, `Photos/`, `server/dogs.json`, and installed runtime dependencies together. The images are intentionally not duplicated into the build.
 
-For HTTPS deployment, set `NODE_ENV=production`, `COOKIE_SECURE=true`, and `ALLOWED_ORIGINS` to the public origin. The default host is loopback; set `HOST=0.0.0.0` only when the deployment requires it. Configure the reverse proxy and TLS for that environment. This is a portfolio application, with no email delivery, password recovery, or third-party OAuth integration.
+For HTTPS deployment, set `NODE_ENV=production`, `COOKIE_SECURE=true`, and `ALLOWED_ORIGINS` to the public origin. The API always binds to `0.0.0.0` and ignores `HOST`. It uses the platform-provided `PORT`, falling back to `3001` locally. On Render, use `npm install && npm run build` as the build command and `npm start` as the start command. The start command executes `server/index.js`. Configure the reverse proxy and TLS for that environment. This is a portfolio application, with no email delivery, password recovery, or third-party OAuth integration.
 
 ## Configuration
 
-See `.env.example`. Configuration includes API port/host, Vite port, API proxy target, SQLite path, allowed submission origins, secure cookies, and session lifetime. `.env` and runtime databases are ignored by Git. Vite reads configuration at startup; restart after changing it. Do not put secrets in variables prefixed `VITE_`, which are public browser configuration.
+See `.env.example`. Configuration includes API port, Vite port, API proxy target, SQLite path, allowed submission origins, secure cookies, and session lifetime. `.env` and runtime databases are ignored by Git. Vite reads configuration at startup; restart after changing it. Do not put secrets in variables prefixed `VITE_`, which are public browser configuration.
 
 ## Pages and preserved behavior
 
