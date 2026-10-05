@@ -14,10 +14,6 @@ export function validateForm(kind, input = {}) {
   if (!errors.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text(data.email))) errors.email = 'Enter a valid email address.';
   if (kind === 'adoption' || kind === 'contact') required('name', 'Name', 2);
   if (kind === 'adoption') {
-    required('phone', 'Phone number');
-    const phone = text(data.phone);
-    if (!errors.phone && (!/^[+\d\s().-]+$/.test(phone) || phone.replace(/\D/g,'').length < 7 || phone.replace(/\D/g,'').length > 15)) errors.phone = 'Enter a phone number with 7 to 15 digits.';
-    required('address', 'Address', 5);
     if (data.dogId !== undefined && data.dogId !== null && (typeof data.dogId !== 'string' || data.dogId.length > 100)) errors.dogId = 'Choose a valid dog.';
   }
   if (kind === 'contact') required('message', 'Message', 5);

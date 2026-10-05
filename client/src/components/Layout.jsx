@@ -57,6 +57,7 @@ export function Layout({namespace='home',title,children}) {
         <button ref={toggle} className={`${ns}-nav__toggle`} type="button" data-menu-toggle aria-label={open?'Close menu':'Open menu'} aria-expanded={open} aria-controls="site-navigation site-account-links" onClick={()=>setOpen(!open)}><Icon name="bars"/><span>Menu</span></button>
       </div>
     </header>
+    <p className="app-notice"><strong>Portfolio demo.</strong> Dogs, team profiles and statistics are illustrative. This is not an operating adoption service. Use fictional details when trying forms.</p>
     {notice&&<p className="app-notice" role="status">{notice}</p>}
     {children}
     <Footer namespace={ns}/>

@@ -5,8 +5,6 @@ import { limits, validateForm } from '../../../shared/validation';
 export const adoptionFields = [
   {name:'name',label:'Name',placeholder:'Your Name',autoComplete:'name'},
   {name:'email',label:'Email',type:'email',placeholder:'Your Email',autoComplete:'email'},
-  {name:'phone',label:'Phone Number',type:'tel',placeholder:'Your Phone Number',autoComplete:'tel'},
-  {name:'address',label:'Address',type:'textarea',placeholder:'Your Address',autoComplete:'street-address'},
 ];
 export const contactFields = [...adoptionFields.slice(0,2),{name:'message',label:'Message',type:'textarea',placeholder:'Your Message'}];
 

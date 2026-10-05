@@ -8,7 +8,7 @@ export default function Home() {
   return <Layout title="Home"><main className="home-main">
     <section className="home-hero"><div className="home-container home-hero__inner">
       <div className="home-hero__text"><h1 className="home-hero__title">Find Your New Best Friend</h1><p className="home-hero__subtitle">Browse loving dogs waiting for a forever home. Simple process, friendly support.</p>
-        <div className="home-hero__actions"><Link className="home-btn home-btn--lg" to="/adopt">Adopt now</Link><Link className="home-btn home-btn--ghost home-btn--lg" to="/dogs">See available dogs</Link></div>
+        <div className="home-hero__actions"><Link className="home-btn home-btn--lg" to="/dogs">Browse Dogs</Link><Link className="home-btn home-btn--ghost home-btn--lg" to="/adopt">Try the demo application</Link></div>
       </div>
       <div className="home-hero__art" aria-hidden="true"><img src="/Photos/DogHouse2.png" alt="Dog House" className="home-hero__image"/></div>
     </div></section>

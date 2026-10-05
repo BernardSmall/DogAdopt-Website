@@ -207,7 +207,7 @@
     "catalog": false
   },
   {
-    "name": "Croissant ass chien",
+    "name": "Croissant",
     "breed": "French Bulldog",
     "age": "2 years",
     "image": "/Photos/FrenchBullDog.png",
@@ -234,7 +234,7 @@
     "catalog": false
   },
   {
-    "name": "Mayo Monkey",
+    "name": "On Time",
     "breed": "Swiss Shepherd",
     "age": "3 years",
     "image": "/Photos/SwissShepard.png",

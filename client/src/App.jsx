@@ -3,6 +3,7 @@ import { Navigate, Route, Routes, useLocation, Link } from 'react-router';
 import Home from './pages/Home';
 import About from './pages/About';
 import Dogs from './pages/Dogs';
+import DogProfile from './pages/DogProfile';
 import Adopt from './pages/Adopt';
 import Contact from './pages/Contact';
 import Account from './pages/Account';
@@ -19,6 +20,7 @@ export default function App(){return <ErrorBoundary><Routes>
   <Route path="/" element={<Home/>}/>
   <Route path="/about" element={<About/>}/>
   <Route path="/dogs" element={<Dogs/>}/>
+  <Route path="/dogs/:id" element={<DogProfile/>}/>
   <Route path="/adopt" element={<Adopt/>}/>
   <Route path="/contact" element={<Contact/>}/>
   <Route path="/login" element={<Account key="login"/>}/>

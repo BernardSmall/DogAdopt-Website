@@ -60,7 +60,7 @@ The home page preserves Penny, bo'oh o' wah'ah, Maximus, and Inca as featured do
 
 Navigation, cards, footers, and form fields are reusable React components. Account forms now create local accounts and log in with email/password. Passwords use salted scrypt hashes; sessions use expiring HttpOnly cookies and hashed database tokens. Log out appears in the shared header while signed in. Third-party sign-in buttons explain that providers are not configured instead of pretending to authenticate. Privacy and Terms display a demo availability message because no such documents existed in the reference.
 
-Contact messages and adoption applications are saved locally. Submission status is shown inline and retained until the next submission. Forms preserve input on errors and block duplicate clicks while saving. There are loading, empty, retry, and not-found states. Applications receive the same field validation in React and Express, including email, phone, length constraints, and server-side dog existence checks.
+Contact messages and adoption applications are saved locally. Submission status is shown inline and retained until the next submission. Forms preserve input on errors and block duplicate clicks while saving. There are loading, empty, retry, and not-found states. Applications receive the same field validation in React and Express, including email, length constraints, and server-side dog existence checks.
 
 The reference has no visible search field or filter controls. No new search bar was added. Existing optional name/breed search behavior is exposed through the API and `/dogs?q=Luna&breed=Beagle`, without changing the page layout.
 
@@ -87,11 +87,11 @@ Application JSON:
 {
   "dogId": "buddy",
   "name": "Jane Example",
-  "email": "jane@example.com",
-  "phone": "+27 82 123 4567",
-  "address": "12 Example Road"
+  "email": "jane@example.com"
 }
 ```
+
+Demo enquiries save the supplied name, email, selected dog and timestamp to SQLite. Use fictional details. They do not contact a shelter, send email or create an adoption commitment. Phone and address are no longer collected; the API ignores these fields and leaves the existing database columns empty for new submissions. Existing records are unchanged.
 
 `dogId` may be omitted or null for general interest. Contact accepts `name`, `email`, and `message`. Account endpoints accept `email` and `password`. Validation failures return HTTP 400 with `{ message, errors: { field: "message" } }`. Conflict, missing-record, invalid-login, request-size and rate-limit responses use appropriate HTTP status codes. Private applications, messages, and user records have no public listing endpoint.
 

@@ -36,8 +36,8 @@ test('API contracts, validation, persistence and sessions', async t=>{
     await t.test('application field errors reject malformed data without saving',async()=>{
       const response = await send('/api/applications',{name:' ',email:'bad',phone:'abc',address:'x'});
       assert.equal(response.status,400);
-      assert.deepEqual(Object.keys((await response.json()).errors).sort(),['address','email','name','phone']);
-      for(const body of [null,[],{...valid,name:[]},{...valid,address:'x'.repeat(1001)},{...valid,phone:'123'},{...valid,dogId:12}]) assert.equal((await send('/api/applications',body)).status,400);
+      assert.deepEqual(Object.keys((await response.json()).errors).sort(),['email','name']);
+      for(const body of [null,[],{...valid,name:[]},{...valid,name:'x'.repeat(101)},{...valid,dogId:12}]) assert.equal((await send('/api/applications',body)).status,400);
       assert.equal(db.prepare('SELECT COUNT(*) AS n FROM applications').get().n,0);
     });
     await t.test('unknown dog is rejected instead of silently losing selection',async()=>{
@@ -49,8 +49,9 @@ test('API contracts, validation, persistence and sessions', async t=>{
       assert.equal(response.status,201);
       const body = await response.json();assert.ok(body.id);assert.equal(body.email,undefined);
       const row = db.prepare('SELECT * FROM applications WHERE id = ?').get(body.id);
-      assert.equal(row.dog_id,'buddy');assert.equal(row.address,valid.address);
-      assert.equal((await send('/api/applications',{...valid,dogId:null})).status,201);
+      assert.equal(row.dog_id,'buddy');assert.equal(row.address,'');assert.equal(row.phone,'');
+      assert.match(body.message,/No shelter was contacted/);
+      assert.equal((await send('/api/applications',{name:valid.name,email:valid.email,dogId:null})).status,201);
     });
     await t.test('concurrent writes remain distinct and private records are not public',async()=>{
       const responses = await Promise.all(Array.from({length:5},()=>send('/api/applications',valid)));

@@ -156,3 +156,16 @@ body :is(input,textarea):focus { border-color:var(--ui-ink); box-shadow:none; tr
   .about-hero__stat span { max-width:12ch; text-align:right; margin:0; }
 }
 @media (prefers-reduced-motion:reduce) { body :is(a,button,input,textarea) { transition:none; } }
+
+/* Dog profiles reuse the card surfaces and application controls. */
+.dog-profile { display:grid; gap:2rem; margin-top:1.5rem; align-items:start; }
+.dog-profile > * { min-width:0; }
+.dog-profile__photo { background:#fff8eb; }
+.dog-profile__photo img { display:block; width:100%; aspect-ratio:1; object-fit:contain; }
+.dog-profile__facts { display:grid; gap:1rem; margin:1.5rem 0 2rem; }
+.dog-profile__facts dt { font-weight:800; }
+.dog-profile__facts dd { margin:.25rem 0 0; color:var(--ui-muted); }
+.selected-dog { display:flex; align-items:center; gap:1rem; padding-bottom:1.25rem; margin-bottom:1.25rem; border-bottom:1px solid #70716b; overflow-wrap:anywhere; }
+.selected-dog img { width:5rem; height:5rem; flex-shrink:0; object-fit:contain; border-radius:10px; background:#fff8eb; }
+.selected-dog p { margin:.25rem 0 0; color:var(--ui-muted); }
+@media (min-width:60rem) { .dog-profile { grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:3rem; } }

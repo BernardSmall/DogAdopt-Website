@@ -56,8 +56,8 @@ export function createApp(db, { origins = [], secureCookie = false, sessionDays 
     const dogId = cleanText(req.body.dogId) || null;
     if (dogId && !db.prepare('SELECT id FROM dogs WHERE id = ?').get(dogId)) return res.status(400).json({ message:'The selected dog is no longer available. Please choose another dog.', errors:{ dogId:'Choose a dog from the listings.' } });
     const id = randomUUID();
-    db.prepare('INSERT INTO applications VALUES (?, ?, ?, ?, ?, ?, ?)').run(id,dogId,cleanText(req.body.name),cleanText(req.body.email).toLowerCase(),cleanText(req.body.phone),cleanText(req.body.address),new Date().toISOString());
-    res.status(201).json({ id, message:'Your adoption form has been successfully submitted!' });
+    db.prepare('INSERT INTO applications VALUES (?, ?, ?, ?, ?, ?, ?)').run(id,dogId,cleanText(req.body.name),cleanText(req.body.email).toLowerCase(),'','',new Date().toISOString());
+    res.status(201).json({ id, message:'Your demo enquiry has been saved. This is not an adoption commitment. No shelter was contacted and no email or follow-up will be sent.' });
   });
   app.post('/api/contact', validate('contact'), (req,res) => {
     const id = randomUUID();
