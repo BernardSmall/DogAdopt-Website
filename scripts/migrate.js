@@ -18,6 +18,15 @@ try {
     await client.query('INSERT INTO dogadopt_migrations VALUES ($1)', [name]);
     console.log(`Applied ${name}; seeded ${dogs.length} dogs.`);
   } else console.log(`${name} already applied.`);
+  for (const migration of ['002-rename-dogs']) {
+    if ((await client.query('SELECT name FROM dogadopt_migrations WHERE name = $1', [migration])).rowCount) {
+      console.log(`${migration} already applied.`);
+      continue;
+    }
+    await client.query(await readFile(new URL(`../server/migrations/${migration}.sql`, import.meta.url), 'utf8'));
+    await client.query('INSERT INTO dogadopt_migrations VALUES ($1)', [migration]);
+    console.log(`Applied ${migration}.`);
+  }
   await client.query('COMMIT');
 } catch (error) {
   await client.query('ROLLBACK').catch(() => {});

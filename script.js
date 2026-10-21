@@ -45,7 +45,7 @@ const dogs = [
     image: "Photos/Poodle.png",
   },
   {
-    name: "Jamal-que",
+    name: "Demetrius",
     breed: "Staffy",
     age: "3.5 years",
     image: "Photos/Staffy.png",
@@ -142,7 +142,7 @@ const dogs = [
     image: "Photos/Boerbull.png", // Replace with actual path
   },
   {
-    name: "Croissant ass chien",
+    name: "Casper",
     breed: "French Bulldog",
     age: "2 years",
     image: "Photos/FrenchBullDog.png", // Replace with actual path
