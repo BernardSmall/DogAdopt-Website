@@ -1,5 +1,6 @@
 import { resolve } from 'node:path';
 import { createStore } from './store.js';
+import { createPostgresStore } from './postgres-store.js';
 import { createApp } from './app.js';
 
 const port = Number(process.env.PORT || 3001);
@@ -22,7 +23,9 @@ const origins = (
   .split(',')
   .map((s) => s.trim());
 
-const db = createStore(
+const db = process.env.DATABASE_URL
+  ? await createPostgresStore(process.env.DATABASE_URL)
+  : createStore(
   resolve(process.env.DATABASE_PATH || './data/dogadopt.sqlite')
 );
 
@@ -38,8 +41,8 @@ const server = app.listen(port, host, () => {
 
 for (const signal of ['SIGINT', 'SIGTERM']) {
   process.on(signal, () =>
-    server.close(() => {
-      db.close();
+    server.close(async () => {
+      await db.close();
       process.exit(0);
     })
   );

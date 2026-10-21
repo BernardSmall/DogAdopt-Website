@@ -123,3 +123,21 @@ Manual smoke checks: open each route at phone/tablet/desktop widths; open and cl
 - `tests/`: integration and validation tests.
 
 Implementation references: [Vite](https://vite.dev/guide/), [React Router](https://reactrouter.com/start/declarative/routing), [Express](https://expressjs.com/en/5x/guide/error-handling/).
+
+
+### Neon Postgres
+
+The project is linked to the requested Neon production branch through `.neon`
+(ignored by git). `neon.ts` manages the Postgres-only service configuration.
+Run `neon deploy` to pull secrets into `.env`, then `npm run db:migrate`,
+`npm run build`, and `npm start`. The Express server uses a shared `pg` pool
+with `DATABASE_URL`; migrations use the direct `DATABASE_URL_UNPOOLED`.
+The frontend never receives database credentials. Without `DATABASE_URL`, the
+local SQLite fallback and existing tests continue to work. Both `.env` and
+`.env.local` are supported by the server commands.
+
+The versioned migration creates tables and seeds the original 30 dogs once.
+Existing SQLite enquiries, messages, and accounts are not automatically copied.
+With the built app running, verify live reads, form writes, and account sessions
+using `node --env-file=.env scripts/smoke-neon.js`. The smoke test removes its own
+records and does not contact shelters or send email.

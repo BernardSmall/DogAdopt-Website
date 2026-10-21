@@ -26,5 +26,5 @@ export function createStore(filename) {
       db.exec('COMMIT');
     } catch (error) { db.exec('ROLLBACK'); throw error; }
   }
-  return db;
+  return { prepare(sql) { return db.prepare(sql.replace('ORDER BY sort_order', 'ORDER BY rowid')); }, close() { db.close(); } };
 }

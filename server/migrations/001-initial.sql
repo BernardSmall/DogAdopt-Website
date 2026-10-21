@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS dogs (id TEXT PRIMARY KEY, name TEXT NOT NULL, breed TEXT NOT NULL, age TEXT NOT NULL, image TEXT NOT NULL, featured INTEGER NOT NULL, catalog INTEGER NOT NULL, sort_order INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS applications (id TEXT PRIMARY KEY, dog_id TEXT REFERENCES dogs(id), name TEXT NOT NULL, email TEXT NOT NULL, phone TEXT NOT NULL, address TEXT NOT NULL, created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS messages (id TEXT PRIMARY KEY, name TEXT NOT NULL, email TEXT NOT NULL, message TEXT NOT NULL, created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, email TEXT NOT NULL UNIQUE, password_hash TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS sessions (token_hash TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id), expires_at BIGINT NOT NULL);
+CREATE INDEX IF NOT EXISTS sessions_expires_at_idx ON sessions(expires_at);
+CREATE INDEX IF NOT EXISTS sessions_user_id_idx ON sessions(user_id);
