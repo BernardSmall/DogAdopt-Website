@@ -1,0 +1,84 @@
+/* Local to the six-section About page; shared branding stays in the site styles. */
+.about-foundation {
+  --surface-color: #F6F2ED;
+  background: var(--surface-color);
+}
+
+.about-foundation__section {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.about-foundation__hero,
+.about-foundation__story-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 6rem);
+}
+
+.about-foundation__intro {
+  max-width: 40ch;
+  margin: 1.25rem 0 0;
+  font-size: 1.25rem;
+}
+
+.about-foundation__illustration {
+  max-width: 480px;
+  justify-self: center;
+}
+
+.about-foundation__photo {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+  justify-self: center;
+}
+
+.about-foundation__story {
+  --surface-color: #F4B0B1;
+  background: var(--surface-color);
+}
+
+.about-foundation__reading { max-width: 70ch; }
+.about-foundation p { line-height: 1.7; }
+.about-foundation p:last-child { margin-bottom: 0; }
+.about-foundation__mission { background: #E0EDD3; }
+.about-foundation__join { background: #FFE1CD; }
+
+.about-foundation__team {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.about-foundation__values {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 3rem;
+  max-width: 70rem;
+  margin-top: 1.75rem;
+}
+
+.about-foundation__values h3 { margin: 0 0 .5rem; font-size: 1.25rem; }
+.about-foundation__values p { margin: 0; }
+.about-foundation__join .about-actions { margin-top: 1.5rem; }
+
+@media (max-width: 60rem) {
+  .about-foundation__team { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 40rem) {
+  .about-foundation__hero,
+  .about-foundation__story-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .about-foundation__illustration { max-width: 360px; }
+  .about-foundation__values { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 27rem) {
+  .about-foundation__team { grid-template-columns: minmax(0, 1fr); }
+}

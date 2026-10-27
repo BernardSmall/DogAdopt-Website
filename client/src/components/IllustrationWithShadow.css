@@ -1,0 +1,28 @@
+.illustration-with-shadow {
+  min-width: 0;
+  max-width: 100%;
+  /* Reserve room for the foreground oval extending just below the image. */
+  padding-bottom: 3%;
+}
+
+.illustration-with-shadow__canvas {
+  position: relative;
+  isolation: isolate;
+}
+
+.illustration-with-shadow__canvas > .cartoon-shadow {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.illustration-with-shadow__base { z-index: 0; }
+.illustration-with-shadow__front { z-index: 1; }
+
+.illustration-with-shadow__canvas > .illustration-with-shadow__image {
+  display: block;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}

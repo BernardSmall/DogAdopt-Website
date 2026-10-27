@@ -1,0 +1,6 @@
+/* Approved flat cartoon oval: no filters, gradients, blending or lighting. */
+.cartoon-shadow {
+  pointer-events: none;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--surface-color) calc(100% - var(--cartoon-shadow-darkness)), black);
+}
