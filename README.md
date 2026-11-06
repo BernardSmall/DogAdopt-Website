@@ -1,143 +1,87 @@
-# DogAdopt
+DogAdopt — Full-Stack Dog Adoption Platform
+A responsive full-stack dog adoption website built with React, Node.js, Express, and PostgreSQL. DogAdopt is a portfolio project demonstrating frontend development, REST APIs, database persistence, authentication, testing, and deployment.
 
-React recreation of the existing DogAdopt portfolio website, with an Express API and a persistent SQLite database. The original HTML, CSS, JavaScript, and `Photos/` assets remain in the repository as the reference. The React app reuses those styles and images, including the responsive improvements and Font Awesome 6 icons. No external account or database service is required.
+Live demo · GitHub repository
+Portfolio demonstration: This is not an operating animal rescue service. Dog listings and adoption enquiries are demonstrations; submissions do not contact a shelter or initiate a real adoption.
 
-## Requirements
+Features
+- Dog catalogue and profiles: Browse available dog profiles and view individual dog details. API supports search and breed filters.
+- Adoption interest forms: Submit an enquiry for a selected dog or general adoption interest, with frontend and backend validation.
+- Accounts: Register, log in, maintain a session, and log out. Passwords are hashed and sessions use HttpOnly cookies.
+- Contact form: Store enquiries through the Express backend.
+- Responsive interface: React components, client-side routing, loading/empty/error states, and mobile-friendly layouts.
+- Persistent storage: PostgreSQL via Neon in hosted environments, with SQLite as a local development fallback.
+Tech stack
+Area	Technologies
+Frontend	React 19, Vite, React Router, JavaScript, HTML, CSS
+Backend	Node.js 24+, Express 5, REST APIs
+Database	PostgreSQL (Neon), SQLite (local fallback), SQL
+Security	Scrypt password hashing, HttpOnly sessions, input validation, rate limiting
+Testing and tools	Node.js test runner, Git, GitHub, npm
 
-- Node.js 24 or later and npm. SQLite uses Node's built-in `node:sqlite` module; some Node versions print an experimental warning.
-- Run commands from the repository root.
 
-## Install and run
-
-```sh
+Architecture
+React + Vite frontend
+        |
+        | HTTP /api
+        v
+Node.js + Express API
+        |
+        +-- PostgreSQL (Neon; DATABASE_URL configured)
+        |
+        +-- SQLite (local development fallback)
+The API manages database access, input validation, and authentication. Client and server share input-validation rules through shared/validation.js. Database credentials stay on the server.
+Run locally
+Requirements: Node.js 24 or newer, npm.
+git clone https://github.com/BernardSmall/DogAdopt-Website.git
+cd DogAdopt-Website
 npm install
 cp .env.example .env
 npm run dev
-```
-
-Open **http://127.0.0.1:5173**. Express listens on **http://127.0.0.1:3001**. The dev command starts both processes and stops both when interrupted.
-
-To use separate terminals:
-
-```sh
-npm run dev:server
-npm run dev:client
-```
-
-Vite proxies `/api` and `/Photos` to Express, so both processes must be running. Use the React development URL instead of opening the old `.html` files directly.
-
-## Production build
-
-```sh
+Open http://localhost:5173. The API runs on http://localhost:3001 by default. If DATABASE_URL is unset, the app uses a local SQLite database (./data/dogadopt.sqlite) without requiring a cloud account.
+Production build
 npm run build
 npm start
-```
+The Express server serves the compiled frontend and API. In hosted environments, use the platform PORT. Configure NODE_ENV=production, COOKIE_SECURE=true, and ALLOWED_ORIGINS for HTTPS hosting.
+PostgreSQL / Neon
+The project supports a hosted PostgreSQL database via Neon. Keep DATABASE_URL and DATABASE_URL_UNPOOLED in private server-side environment variables; do not commit secrets.
+npm run db:migrate
+npm run build
+npm start
+The migration script seeds dog data on first setup and tracks applied migrations. For a Neon-linked environment, neon deploy can populate local environment secrets. See .env.example and the migration scripts for configuration details. Existing local SQLite records are not automatically migrated to PostgreSQL.
+API endpoints
+Method	Endpoint	Purpose
+GET	/api/health	Health check
+GET	/api/dogs	Dog listings, optionally filtered with q, breed, or group
+GET	/api/dogs/:id	Individual dog details
+POST	/api/applications	Save a demonstration adoption enquiry
+POST	/api/contact	Save a contact message
+POST	/api/auth/signup	Create an account and session
+POST	/api/auth/login	Log in
+GET	/api/auth/me	Current signed-in user
+POST	/api/auth/logout	End a session
 
-Open **http://127.0.0.1:3001**. Express serves `dist/`, the original `Photos/`, and the API. React routes support direct navigation and refresh. Deploy the server, `dist/`, `Photos/`, `server/dogs.json`, and installed runtime dependencies together. The images are intentionally not duplicated into the build.
 
-For HTTPS deployment, set `NODE_ENV=production`, `COOKIE_SECURE=true`, and `ALLOWED_ORIGINS` to the public origin. The API always binds to `0.0.0.0` and ignores `HOST`. It uses the platform-provided `PORT`, falling back to `3001` locally. On Render, use `npm install && npm run build` as the build command and `npm start` as the start command. The start command executes `server/index.js`. Configure the reverse proxy and TLS for that environment. This is a portfolio application, with no email delivery, password recovery, or third-party OAuth integration.
-
-## Configuration
-
-See `.env.example`. Configuration includes API port, Vite port, API proxy target, SQLite path, allowed submission origins, secure cookies, and session lifetime. `.env` and runtime databases are ignored by Git. Vite reads configuration at startup; restart after changing it. Do not put secrets in variables prefixed `VITE_`, which are public browser configuration.
-
-## Pages and preserved behavior
-
-| React route | Original URL |
-| --- | --- |
-| `/` | `/HomePage.html` |
-| `/about` | `/AboutUs.html` |
-| `/dogs` | `/dogs.html` |
-| `/adopt` | `/adopt.html` |
-| `/contact` | `/Contact.html` |
-| `/login` | `/login.html` |
-| `/signup` | `/SignUp.html` |
-| `/loading` | `/Loading.html` |
-
-Old URLs redirect inside React, preserving query strings. Both `/adopt?dogId=buddy` and the original `/adopt.html?dog=Buddy` select Buddy. Adoption without a selected dog records general adoption interest, matching the original standalone form. Invalid dog selections cannot be submitted.
-
-The home page preserves Penny, bo'oh o' wah'ah, Maximus, and Inca as featured dogs. The Dogs page displays every listing returned by the API, including Buddy, Luna, Max, and all original entries from `script.js`. Search and breed filters apply to the full dataset, without pagination. Names and descriptions are unchanged. All original staff profiles, imagery, statistics, and story copy remain demo content.
-
-Navigation, cards, footers, and form fields are reusable React components. Account forms now create local accounts and log in with email/password. Passwords use salted scrypt hashes; sessions use expiring HttpOnly cookies and hashed database tokens. Log out appears in the shared header while signed in. Third-party sign-in buttons explain that providers are not configured instead of pretending to authenticate. Privacy and Terms display a demo availability message because no such documents existed in the reference.
-
-Contact messages and adoption applications are saved locally. Submission status is shown inline and retained until the next submission. Forms preserve input on errors and block duplicate clicks while saving. There are loading, empty, retry, and not-found states. Applications receive the same field validation in React and Express, including email, length constraints, and server-side dog existence checks.
-
-The reference has no visible search field or filter controls. No new search bar was added. Existing optional name/breed search behavior is exposed through the API and `/dogs?q=Luna&breed=Beagle`, without changing the page layout.
-
-## API
-
-| Method | Endpoint | Result |
-| --- | --- | --- |
-| GET | `/api/health` | Health status |
-| GET | `/api/dogs` | `{ dogs: [...] }`, all original records |
-| GET | `/api/dogs?group=featured` | Four home-page dogs |
-| GET | `/api/dogs?group=catalog` | Three original Dogs-page dogs |
-| GET | `/api/dogs?q=...&breed=...` | Case-insensitive name/breed search and exact breed filter |
-| GET | `/api/dogs/:id` | `{ dog: {...} }` or 404 |
-| POST | `/api/applications` | Saves application; returns ID and success message |
-| POST | `/api/contact` | Saves contact message |
-| POST | `/api/auth/signup` | Creates account and session |
-| POST | `/api/auth/login` | Creates session |
-| GET | `/api/auth/me` | Current user or null |
-| POST | `/api/auth/logout` | Revokes current session |
-
-Application JSON:
-
-```json
+Example adoption enquiry:
 {
   "dogId": "buddy",
   "name": "Jane Example",
   "email": "jane@example.com"
 }
-```
-
-Demo enquiries save the supplied name, email, selected dog and timestamp to SQLite. Use fictional details. They do not contact a shelter, send email or create an adoption commitment. Phone and address are no longer collected; the API ignores these fields and leaves the existing database columns empty for new submissions. Existing records are unchanged.
-
-`dogId` may be omitted or null for general interest. Contact accepts `name`, `email`, and `message`. Account endpoints accept `email` and `password`. Validation failures return HTTP 400 with `{ message, errors: { field: "message" } }`. Conflict, missing-record, invalid-login, request-size and rate-limit responses use appropriate HTTP status codes. Private applications, messages, and user records have no public listing endpoint.
-
-## Persistence
-
-`DATABASE_PATH` defaults to `data/dogadopt.sqlite`. The first launch imports `server/dogs.json` in a transaction and records a migration marker. Subsequent starts retain listings, applications, messages, accounts, and sessions without reseeding. SQLite transactions and WAL handle concurrent requests. Back up the database using SQLite's backup facilities or stop the process before copying the database files. A writable persistent volume is needed when deploying; ephemeral/serverless storage will not preserve submissions. One database file is intended for a single application deployment.
-
-## Checks
-
-```sh
+dogId may be omitted for general interest. Server-side validation checks submitted fields and dog selections. Contact messages and adoption enquiries are stored for demonstration purposes, not emailed to shelters.
+Testing
 npm test
 npm run build
-# Both:
+# Or run both:
 npm run check
-```
-
-Tests use temporary SQLite databases and local ephemeral HTTP ports. They cover original data, query filters, individual details, validation, malformed/oversized requests, selected-dog integrity, concurrent writes, persistence across reopening, contact submissions, hashed credentials, session rotation/logout, origin checks, asset serving, and direct route refresh. No test writes to your development database.
-
-Manual smoke checks: open each route at phone/tablet/desktop widths; open and close the menu with Escape; submit invalid and valid adoption data; reload after signup/login; test empty results using `/dogs?q=not-a-dog`; stop Express to check retry/error states. The Loading page preserves the original animation and respects reduced-motion settings.
-
-## Structure
-
-- `client/src/pages/`: React pages; `components/`: shared layout, cards, fields, async states.
-- `client/src/migration.css`: limited React integration and request-state styling.
-- `client/src/polish.css`: shared visual refinements for typography, spacing, responsive cards and forms, contrast, focus, and request states. It loads after the reference styles and retains their palette and raised outlines.
-- `styles.css`, `adopt.css`, `contact.css`, `responsive.css`: original visual reference, imported by React.
-- `server/`: Express routes, SQLite setup, and original seed data.
-- `shared/validation.js`: frontend/backend validation contract.
-- `tests/`: integration and validation tests.
-
-Implementation references: [Vite](https://vite.dev/guide/), [React Router](https://reactrouter.com/start/declarative/routing), [Express](https://expressjs.com/en/5x/guide/error-handling/).
-
-
-### Neon Postgres
-
-The project is linked to the requested Neon production branch through `.neon`
-(ignored by git). `neon.ts` manages the Postgres-only service configuration.
-Run `neon deploy` to pull secrets into `.env`, then `npm run db:migrate`,
-`npm run build`, and `npm start`. The Express server uses a shared `pg` pool
-with `DATABASE_URL`; migrations use the direct `DATABASE_URL_UNPOOLED`.
-The frontend never receives database credentials. Without `DATABASE_URL`, the
-local SQLite fallback and existing tests continue to work. Both `.env` and
-`.env.local` are supported by the server commands.
-
-The versioned migration creates tables and seeds the original 30 dogs once.
-Existing SQLite enquiries, messages, and accounts are not automatically copied.
-With the built app running, verify live reads, form writes, and account sessions
-using `node --env-file=.env scripts/smoke-neon.js`. The smoke test removes its own
-records and does not contact shelters or send email.
+The automated tests cover validation, dog listings and search, persistence, authentication and sessions, submissions, request protection, and application routing. Tests use temporary local SQLite databases.
+Project structure
+client/src/          React pages, components and styles
+server/              Express API, database logic, seed data, migrations
+shared/validation.js Shared validation rules
+scripts/             Database migration and smoke-test scripts
+tests/               Automated tests
+Photos/              Image assets
+The project began as a static website recreation and evolved into a React application with a backend, authentication, and persistent database storage. Some original HTML/CSS assets remain as references. Active frontend routes include /, /about, /dogs, /dogs/:id, /adopt, /contact, /login, and /signup.
+Limitations
+DogAdopt is a learning and portfolio application rather than an operational adoption service. It does not provide password recovery, third-party OAuth, or real email delivery. Use fictional details when testing forms.
