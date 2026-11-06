@@ -1,87 +1,351 @@
-DogAdopt — Full-Stack Dog Adoption Platform
-A responsive full-stack dog adoption website built with React, Node.js, Express, and PostgreSQL. DogAdopt is a portfolio project demonstrating frontend development, REST APIs, database persistence, authentication, testing, and deployment.
 
-Live demo · GitHub repository
-Portfolio demonstration: This is not an operating animal rescue service. Dog listings and adoption enquiries are demonstrations; submissions do not contact a shelter or initiate a real adoption.
+# DogAdopt — Full-Stack Dog Adoption Website
 
-Features
-- Dog catalogue and profiles: Browse available dog profiles and view individual dog details. API supports search and breed filters.
-- Adoption interest forms: Submit an enquiry for a selected dog or general adoption interest, with frontend and backend validation.
-- Accounts: Register, log in, maintain a session, and log out. Passwords are hashed and sessions use HttpOnly cookies.
-- Contact form: Store enquiries through the Express backend.
-- Responsive interface: React components, client-side routing, loading/empty/error states, and mobile-friendly layouts.
-- Persistent storage: PostgreSQL via Neon in hosted environments, with SQLite as a local development fallback.
-Tech stack
-Area	Technologies
-Frontend	React 19, Vite, React Router, JavaScript, HTML, CSS
-Backend	Node.js 24+, Express 5, REST APIs
-Database	PostgreSQL (Neon), SQLite (local fallback), SQL
-Security	Scrypt password hashing, HttpOnly sessions, input validation, rate limiting
-Testing and tools	Node.js test runner, Git, GitHub, npm
+DogAdopt is a full-stack web application I developed using React, Node.js, Express and PostgreSQL. The project started as a static website and gradually evolved into a full-stack application with a backend API, user authentication and database integration.
 
+I used this project to improve my understanding of frontend and backend development, working with REST APIs, managing databases and deploying applications.
 
-Architecture
-React + Vite frontend
-        |
-        | HTTP /api
-        v
-Node.js + Express API
-        |
-        +-- PostgreSQL (Neon; DATABASE_URL configured)
-        |
-        +-- SQLite (local development fallback)
-The API manages database access, input validation, and authentication. Client and server share input-validation rules through shared/validation.js. Database credentials stay on the server.
-Run locally
-Requirements: Node.js 24 or newer, npm.
+**Live Website:** [DogAdopt](https://dogadopt-website-1.onrender.com)  
+**Repository:** [DogAdopt-Website](https://github.com/BernardSmall/DogAdopt-Website)
+
+> **Note:** This is a portfolio project and not a real animal adoption service. The dog listings and adoption applications are for demonstration purposes.
+
+## Features
+
+The application includes the following functionality:
+
+- **Dog Listings:** Users can browse dog profiles and view information about individual dogs.
+- **Adoption Applications:** Users can submit adoption enquiries for specific dogs or general adoption interest.
+- **User Authentication:** Account registration, login and logout functionality with password hashing and session management.
+- **Contact Form:** Users can submit contact enquiries that are stored in the database.
+- **Responsive Design:** The website supports desktop and mobile devices using reusable React components.
+- **Input Validation:** Form submissions are validated on both the frontend and backend.
+- **Database Integration:** PostgreSQL is used for hosted environments, with SQLite available for local development.
+- **Error Handling:** The application includes loading states, validation feedback and error handling.
+
+## Technologies Used
+
+| Category | Technologies |
+|----------|-------------|
+| Frontend | React, JavaScript, HTML, CSS, Vite, React Router |
+| Backend | Node.js, Express, REST APIs |
+| Database | PostgreSQL, Neon, SQLite |
+| Authentication | Password Hashing, Session Management, HttpOnly Cookies |
+| Testing | Node.js Test Runner |
+| Development Tools | Git, GitHub, npm |
+| Deployment | Render, Neon |
+
+## Application Architecture
+
+The project uses a client-server architecture with a React frontend, Express backend and a database for storing application data.
+
+```text
+React Frontend
+      |
+      | HTTP Requests
+      |
+      v
+Express REST API
+      |
+      | Business Logic
+      | Validation
+      | Authentication
+      |
+      v
+Database
+      |
+      |-- PostgreSQL (Neon)
+      |
+      |-- SQLite (Local Development)
+```
+
+The frontend communicates with the backend through REST API endpoints. The backend handles database operations, authentication and validation.
+
+I also implemented shared validation rules between the frontend and backend to help keep form validation consistent.
+
+## Getting Started
+
+### Requirements
+
+To run the project locally, you will need:
+
+- Node.js 24 or newer
+- npm
+- Git
+
+### Installation
+
+**1. Clone the repository**
+
+```bash
 git clone https://github.com/BernardSmall/DogAdopt-Website.git
 cd DogAdopt-Website
+```
+
+**2. Install dependencies**
+
+```bash
 npm install
+```
+
+**3. Configure environment variables**
+
+Create a local environment file using the example provided:
+
+```bash
 cp .env.example .env
+```
+
+The application uses SQLite by default if a PostgreSQL connection has not been configured.
+
+**4. Start the development server**
+
+```bash
 npm run dev
-Open http://localhost:5173. The API runs on http://localhost:3001 by default. If DATABASE_URL is unset, the app uses a local SQLite database (./data/dogadopt.sqlite) without requiring a cloud account.
-Production build
-npm run build
-npm start
-The Express server serves the compiled frontend and API. In hosted environments, use the platform PORT. Configure NODE_ENV=production, COOKIE_SECURE=true, and ALLOWED_ORIGINS for HTTPS hosting.
-PostgreSQL / Neon
-The project supports a hosted PostgreSQL database via Neon. Keep DATABASE_URL and DATABASE_URL_UNPOOLED in private server-side environment variables; do not commit secrets.
+```
+
+The application should be available at:
+
+- Frontend: http://localhost:5173
+- Backend: http://localhost:3001
+
+## Database
+
+The project supports two database configurations.
+
+### SQLite
+
+SQLite is used as the local development fallback. This allows the application to run without requiring a cloud database.
+
+When no PostgreSQL connection string is configured, the application stores its data in a local SQLite database.
+
+### PostgreSQL
+
+For deployment, I integrated PostgreSQL using Neon.
+
+The database stores information such as:
+
+- Dog listings
+- Adoption enquiries
+- Contact messages
+- User accounts
+- Authentication sessions
+
+Database credentials are managed through environment variables rather than being included in the source code.
+
+To apply PostgreSQL migrations:
+
+```bash
 npm run db:migrate
-npm run build
-npm start
-The migration script seeds dog data on first setup and tracks applied migrations. For a Neon-linked environment, neon deploy can populate local environment secrets. See .env.example and the migration scripts for configuration details. Existing local SQLite records are not automatically migrated to PostgreSQL.
-API endpoints
-Method	Endpoint	Purpose
-GET	/api/health	Health check
-GET	/api/dogs	Dog listings, optionally filtered with q, breed, or group
-GET	/api/dogs/:id	Individual dog details
-POST	/api/applications	Save a demonstration adoption enquiry
-POST	/api/contact	Save a contact message
-POST	/api/auth/signup	Create an account and session
-POST	/api/auth/login	Log in
-GET	/api/auth/me	Current signed-in user
-POST	/api/auth/logout	End a session
+```
 
+The migration process creates the required database structure and imports the initial dog records.
 
-Example adoption enquiry:
+Existing SQLite records are not automatically transferred to PostgreSQL.
+
+## REST API
+
+The backend was developed using Node.js and Express.
+
+It provides endpoints for retrieving dog information, handling form submissions and managing user authentication.
+
+### Dog Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/health` | Check API status |
+| GET | `/api/dogs` | Retrieve dog listings |
+| GET | `/api/dogs/:id` | Retrieve a specific dog |
+| GET | `/api/dogs?q=...` | Search dog listings |
+| GET | `/api/dogs?breed=...` | Filter dogs by breed |
+
+### Application and Contact Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/applications` | Submit an adoption enquiry |
+| POST | `/api/contact` | Submit a contact message |
+
+### Authentication Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/signup` | Register a user |
+| POST | `/api/auth/login` | Log in |
+| GET | `/api/auth/me` | Retrieve the current user |
+| POST | `/api/auth/logout` | Log out |
+
+### Example API Request
+
+An example adoption application request:
+
+```json
 {
   "dogId": "buddy",
   "name": "Jane Example",
   "email": "jane@example.com"
 }
-dogId may be omitted for general interest. Server-side validation checks submitted fields and dog selections. Contact messages and adoption enquiries are stored for demonstration purposes, not emailed to shelters.
-Testing
+```
+
+The backend validates the information before saving the application to the database.
+
+Adoption enquiries are stored for demonstration purposes and are not sent to actual animal shelters.
+
+## Authentication
+
+I implemented account registration and login functionality to gain experience working with authentication and session management.
+
+The authentication system includes:
+
+- User registration and login
+- Password hashing using scrypt
+- Session management using HttpOnly cookies
+- Session expiration and logout
+- Validation of authentication requests
+
+The application does not currently support password recovery or third-party authentication.
+
+## Testing
+
+The project includes automated tests for backend functionality and application behaviour.
+
+To run the tests:
+
+```bash
 npm test
+```
+
+To build the application:
+
+```bash
 npm run build
-# Or run both:
+```
+
+To run both:
+
+```bash
 npm run check
-The automated tests cover validation, dog listings and search, persistence, authentication and sessions, submissions, request protection, and application routing. Tests use temporary local SQLite databases.
-Project structure
-client/src/          React pages, components and styles
-server/              Express API, database logic, seed data, migrations
-shared/validation.js Shared validation rules
-scripts/             Database migration and smoke-test scripts
-tests/               Automated tests
-Photos/              Image assets
-The project began as a static website recreation and evolved into a React application with a backend, authentication, and persistent database storage. Some original HTML/CSS assets remain as references. Active frontend routes include /, /about, /dogs, /dogs/:id, /adopt, /contact, /login, and /signup.
-Limitations
-DogAdopt is a learning and portfolio application rather than an operational adoption service. It does not provide password recovery, third-party OAuth, or real email delivery. Use fictional details when testing forms.
+```
+
+The tests cover areas such as:
+
+- Input validation
+- Dog listings and filtering
+- Database persistence
+- User authentication
+- Session management
+- Adoption and contact submissions
+- API error handling
+- Application routing
+
+The tests use temporary SQLite databases to avoid affecting development data.
+
+## Deployment
+
+The application is deployed using Render, with PostgreSQL database hosting provided through Neon.
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+To start the production server:
+
+```bash
+npm start
+```
+
+The Express server serves the built React application alongside the API.
+
+For production deployments, the relevant environment variables must be configured on the hosting platform.
+
+These include the database connection strings, allowed origins and secure cookie settings.
+
+Database credentials should not be committed to the repository.
+
+## Project Structure
+
+The project is organised into separate frontend, backend and shared functionality.
+
+```text
+DogAdopt-Website/
+|
+|-- client/
+|   |-- src/
+|       |-- pages/
+|       |-- components/
+|       |-- styles/
+|
+|-- server/
+|   |-- API and database functionality
+|   |-- migrations/
+|   |-- dogs.json
+|
+|-- shared/
+|   |-- validation.js
+|
+|-- scripts/
+|   |-- Database migration scripts
+|
+|-- tests/
+|   |-- Automated tests
+|
+|-- Photos/
+|   |-- Image assets
+|
+|-- .env.example
+|-- package.json
+|-- README.md
+```
+
+## Project Development
+
+DogAdopt originally started as a static website built using HTML, CSS and JavaScript.
+
+As I continued working on it, I decided to expand the project and use it as an opportunity to learn more about full-stack development.
+
+Some of the main improvements I made include:
+
+1. Converting the frontend to React and creating reusable components.
+2. Developing a backend using Node.js and Express.
+3. Creating REST API endpoints for application functionality.
+4. Adding database persistence using SQLite.
+5. Implementing user authentication and session management.
+6. Integrating PostgreSQL through Neon.
+7. Adding automated testing and improving error handling.
+8. Deploying the application using Render.
+
+Working on these features helped me develop a better understanding of how different parts of a web application work together.
+
+It also gave me practical experience with debugging, database integration, API development and deployment.
+
+## Current Limitations
+
+DogAdopt is a portfolio project and is not currently used by a real animal adoption organisation.
+
+Some features that are not implemented include:
+
+- Real animal shelter integrations
+- Email notifications
+- Password recovery
+- Third-party login providers
+- Real-world adoption processing
+
+The existing forms and functionality are intended for demonstration and testing purposes.
+
+## What I Learned
+
+One of the main goals of this project was to develop my skills beyond frontend development.
+
+Through DogAdopt, I gained practical experience working with REST APIs, connecting a frontend to a backend, managing database operations and handling authentication.
+
+I also learned more about configuring applications for deployment, troubleshooting issues and improving existing code.
+
+The project has been a useful way for me to experiment with different technologies and apply what I have learned during my studies.
+
+---
+
+**Live Website:** [dogadopt-website-1.onrender.com](https://dogadopt-website-1.onrender.com)
+
+**Source Code:** [GitHub Repository](https://github.com/BernardSmall/DogAdopt-Website)
